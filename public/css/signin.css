@@ -1,0 +1,89 @@
+html,
+body {
+  height: 100%;
+  background-color: white; /* lila -> #6730b0 gorc -> #ffd81f*/
+}
+
+#header {
+  background-color: white;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+ background-color: #6730b0 !important;
+}  
+
+.nav-link {
+ color: #6730b0;
+}
+
+.nav-link:hover {
+  color: #ffd81f;
+ }
+
+.btn-outline-warning {
+  color: #6730b0;
+  font-size: large;
+}
+
+.btn-outline-warning:hover {
+  color: #6730b0;
+} 
+
+.btn-warning {
+  font-size: large;
+  color: #6730b0;
+}
+
+.btn-warning:hover {
+  color: #6730b0;
+}
+
+.nav-item {
+  font-size: large;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+  align-items: center;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+
+
+
+
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
+
+.text-small {
+  font-size: 85%;
+}
+
+.dropdown-toggle {
+  outline: 0;
+}

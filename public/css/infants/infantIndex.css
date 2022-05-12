@@ -1,0 +1,70 @@
+html,
+body {
+  height: 100%;
+}
+
+#header {
+  background-color: white;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+ background-color: #6730b0 !important;
+}  
+
+.nav-link {
+ color: #6730b0;
+ font-size: large;
+}
+
+.nav-link:hover {
+  color: #ffd81f;
+ }
+
+.nav-link.active:hover {
+  color: #ffd81f;
+} 
+
+.btn-outline-warning {
+  color: #6730b0;
+  font-size: large;
+}
+
+.btn-outline-warning:hover {
+  color: #6730b0;
+} 
+
+.btn-warning {
+  font-size: large;
+  color: #6730b0;
+}
+
+.btn-warning:hover {
+  color: #6730b0;
+}
+
+.nav-item {
+  font-size: large;
+}
+
+.boto-inici {
+  position: relative;
+  border-style: solid;
+  border-width: 1px;
+  font-weight: 700;
+  padding: 9px 25px;
+  --tw-border-opacity: 1;
+  --tw-text-opacity: 1;
+  border-color: rgba(103,48,176,var(--tw-border-opacity));
+  box-shadow: 3px 3px #6730b0, 2px 2px #6730b0, 1px 1px #6730b0;
+  color: rgba(103,48,176,var(--tw-text-opacity));
+  background-color: white;
+  transition: all 0s linear 0s;
+  
+}
+
+.boto-inici:hover {
+  --tw-border-opacity: 1;
+  border-color: rgba(103,48,176,var(--tw-border-opacity));
+  box-shadow: 1px 1px #6730b0, 1px 1px #6730b0, 0px 0px #6730b0;
+  transform: translateX(5px);
+}

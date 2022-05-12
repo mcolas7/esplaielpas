@@ -1,0 +1,224 @@
+html,
+body {
+  height: 100%;
+  background-image: url("../../img/createInfant1010.jpg");
+  background-repeat: repeat-y;
+  background-size: cover;
+}
+
+#header {
+  background-color: white;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+ background-color: #6730b0 !important;
+}  
+
+.nav-link {
+ color: #6730b0;
+ font-size: large;
+}
+
+.nav-link:hover {
+  color: #ffd81f;
+ }
+
+.nav-link.active:hover {
+  color: #ffd81f;
+} 
+
+.btn-outline-warning {
+  color: #6730b0;
+  font-size: large;
+}
+
+.btn-outline-warning:hover {
+  color: #6730b0;
+} 
+
+.btn-warning {
+  font-size: large;
+  color: #6730b0;
+}
+
+.btn-warning:hover {
+  color: #6730b0;
+}
+
+.nav-item {
+  font-size: large;
+}
+
+.boto-inici {
+  position: relative;
+  border-style: solid;
+  border-width: 1px;
+  font-weight: 700;
+  padding: 9px 25px;
+  --tw-border-opacity: 1;
+  --tw-text-opacity: 1;
+  border-color: rgba(103,48,176,var(--tw-border-opacity));
+  box-shadow: 3px 3px #6730b0, 2px 2px #6730b0, 1px 1px #6730b0;
+  color: rgba(103,48,176,var(--tw-text-opacity));
+  background-color: white;
+  transition: all 0s linear 0s;
+  
+}
+
+.boto-inici:hover {
+  --tw-border-opacity: 1;
+  border-color: rgba(103,48,176,var(--tw-border-opacity));
+  box-shadow: 1px 1px #6730b0, 1px 1px #6730b0, 0px 0px #6730b0;
+  transform: translateX(5px);
+}
+
+#submit {
+  background: #6730b0;
+  border: none;
+}
+
+#submit:hover {
+  background: #3c235e; /* #3c235e */
+}
+
+#alergia {
+  resize: none;
+}
+
+label {
+  font-size: large;
+}
+
+  /* ==========================================================================
+     #SPACING
+     ========================================================================== */
+  .p-t-100 {
+    padding-top: 100px;
+  }
+  
+  .p-t-130 {
+    padding-top: 130px;
+  }
+  
+  .p-t-180 {
+    padding-top: 180px;
+  }
+  
+  .p-t-45 {
+    padding-top: 45px;
+  }
+  
+  .p-t-20 {
+    padding-top: 20px;
+  }
+  
+  .p-t-15 {
+    padding-top: 15px;
+  }
+  
+  .p-t-10 {
+    padding-top: 10px;
+  }
+  
+  .p-t-30 {
+    padding-top: 30px;
+  }
+  
+  .p-b-100 {
+    padding-bottom: 100px;
+  }
+  
+  .p-b-50 {
+    padding-bottom: 50px;
+  }
+  
+  .m-r-45 {
+    margin-right: 45px;
+  }
+  
+  .m-r-55 {
+    margin-right: 55px;
+  }
+  
+  .m-b-55 {
+    margin-bottom: 55px;
+  }
+  
+  /* ==========================================================================
+     #WRAPPER
+     ========================================================================== */
+  .wrapper {
+    margin: 0 auto;
+  }
+  
+  .wrapper--w960 {
+    max-width: 960px;
+  }
+  
+  .wrapper--w790 {
+    max-width: 790px;
+  }
+  
+  .wrapper--w780 {
+    max-width: 780px;
+  }
+  
+  .wrapper--w680 {
+    max-width: 680px;
+  }
+  
+  
+  /* ==========================================================================
+     #TITLE
+     ========================================================================== */
+  .title {
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+  }
+  
+  /* ==========================================================================
+     #CARD
+     ========================================================================== */
+  .card {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background: #fff;
+  }
+  
+  .card-5 {
+    background: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+  }
+  
+  .card-5 .card-heading {
+    padding: 20px 0;
+    background: #6730b0;
+    -webkit-border-top-left-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -moz-border-radius-topright: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .card-5 .card-body {
+    padding: 52px 85px;
+    padding-bottom: 73px;
+  }
+  
+  @media (max-width: 767px) {
+    .card-5 .card-body {
+      padding: 40px 30px;
+      padding-bottom: 50px;
+    }
+  }
+  
