@@ -217,5 +217,9 @@
     </div>
 </div>
 
-<script src="/js/infantCreate.js"></script>
+
+@endsection
+
+@section('js')
+  <script src="/js/infantCreate.js"></script>
 @endsection

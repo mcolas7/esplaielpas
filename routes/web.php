@@ -27,6 +27,9 @@ Route::view('/excursions', 'excursions')->name('excursions')->middleware('auth')
 // PELS CONTROLADORS RESOURCES
 
 Route::get('/infant', [InfantController::class,'index'])->name('infants.index');
+
+Route::get('/search/infant', [InfantController::class,'infants'])->name('infants.search');
+
 Route::get('/infant/crear', [InfantController::class,'create'])->name('infants.create');
 
 Route::get('/infant/{persona}/editar', [InfantController::class,'edit'])->name('infants.edit');

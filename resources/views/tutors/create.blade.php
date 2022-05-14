@@ -13,7 +13,7 @@
     <div class="wrapper wrapper--w790">
         <div class="card card-5">
             <div class="card-heading">
-                <h2 class="title">Inscriure tutor de {{$infant['nom']}} {{$infant['cognoms']}}</h2>
+                <h2 class="title">Inscriure tutor de {{$infant['nom'] . " " . $infant['cognoms']}}</h2>  {{-- {{$infant['nom']}} {{$infant['cognoms']}} --}}
             </div>
             <div class="card-body">
 

@@ -5,12 +5,28 @@
 
 @section('css')
     <link href="/css/infants/infantIndex.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/jquery-ui.min.css">
+
 @endsection
 
 @section('content')
 <div class="container w-100">
   <div class=" mt-5 w-100 d-flex justify-content-center">
-    <div class=" mt-5 w-100">
+    <div class="mt-5 w-100">
+
+      <h2 class="mt-4">Buscador:</h2>
+      @auth {{-- Perque es mostri el link de crear un nou projecte nomes si l'usuari esta autenificat --}}
+        <a class="btn btn-primary" href="{{ route('infants.create') }}">Inscriure infant</a> 
+      @endauth 
+
+      <form action-"" class="form-inline">
+        <div class="input-group">
+          <input type="text" class="form-control mr-sm-2" id="search" placeholder="Que vols buscar?">
+          <div class="input-group-append">
+            <button class="btn btn-danger my-2 my-sm-0" type="button">Buscar</button>
+          </div>
+        </div>
+      </form>
 
       @if (session()->has('message'))
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -20,7 +36,7 @@
       @endif
 
       @forelse ($grups as $grup)
-        <div class="table-responsive">
+        <div class="table-responsive mt-2">
           <table class="table table-bordered table-hover caption-top align-middle">
             <caption><h1 style="color: #6730b0;">{{$grup->nom}}</h1></caption>
             <thead style="background: #ffd81f;">
@@ -73,13 +89,30 @@
   
   
 
-@auth {{-- Perque es mostri el link de crear un nou projecte nomes si l'usuari esta autenificat --}}
-    <a href="{{ route('infants.create') }}">Inscriure infant</a>
-@endauth
+
 </div>
+@endsection
+@section('js')
+  <script src="/js/jquery-3.6.0.min.js"></script>
+  <script src="/js/jquery-ui.min.js"></script>
 
-    
-
-    
-    
+  <script>
+    $("#search").autocomplete({
+      source: function(request, response) {
+        $.ajax({
+          url: '{{route('infants.search')}}',
+          dataType: 'json',
+          data: {
+            term: request.term
+          },
+          success: function (data) {
+            response(data)
+          },
+          error: function () {
+            alert('Error!')
+          }
+        });
+      }
+    });
+  </script>
 @endsection

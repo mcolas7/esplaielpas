@@ -9,6 +9,7 @@ use App\Models\Infant;
 use App\Models\InfantSalut;
 use App\Models\Persona;
 use App\Models\Poblacio;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class InfantController extends Controller
@@ -32,11 +33,6 @@ class InfantController extends Controller
             
         // } else {
 
-        // }
-
-        $grups = Grup::get();
-        return view('infants.index', compact('grups'));
-
         // $id = 6;
         // $grup = Grup::find($id);
         // $espurnes = $grup->infants;
@@ -57,9 +53,40 @@ class InfantController extends Controller
         //     'espurnes' => $espurnes
         // ]);
 
-        
+        $grups = Grup::get();
+        return view('infants.index', compact('grups'));
     
 
+    }
+
+    public function infants(Request $request) {
+
+        if (strpos($request->term, ' ') !== false) {
+            
+            $split = explode(" ", $request->term);
+            $nom = $split[0];
+            $cognoms = $split[1];
+
+            $querys = Persona::where('nom', 'LIKE', '%'. $nom . "%")->where('cognoms', 'LIKE', '%' . $cognoms . '%')->whereNotNull('targeta_sanitaria')->get();
+            
+
+        } else {
+            $querys = Persona::where('nom', 'LIKE', '%'. $request->term . "%")->whereNotNull('targeta_sanitaria')->get();
+        }
+
+        // si $request->term conte un espai fer consulta per nom i cognoms
+
+        
+
+        $data = [];
+
+        foreach ($querys as $query) {
+            $data[] = [
+                'label' => $query->nom . " " . $query->cognoms
+            ];
+        }
+
+        return $data;
     }
 
     // MOSTRAR UN INFANT

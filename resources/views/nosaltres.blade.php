@@ -17,13 +17,13 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="/img/acampada.jpg" class="d-block w-100" alt="...">
+          <img src="/img/nosaltres/colonies3.jpg" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-          <img src="/img/acampada2.jpg" class="d-block w-100" alt="...">
+          <img src="/img/nosaltres/esplai3.jpg" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-          <img src="/img/colonies.jpg" class="d-block w-100" alt="...">
+          <img src="/img/nosaltres/acampada.jpg" class="d-block w-100" alt="...">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -42,7 +42,8 @@
 
         <div class="section-title">
           <h2>Esplai el Pas</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>És una associació voluntària sense ànim de lucre que treballa per a l'educació en el lleure d'infants i joves. Està considerada una opció d'educació no formal. Entre les diferents activitats que es poden fer en un esplai, en destaquen les següents:el joc, com a element clau en el desenvolupament personal i interpersonal; el taller; l'excursió, com a descoberta de l'entorn i el medi natural; l'esport; la convivència; la implicació personal; la participació i la presa de responsabilitats en el desenvolupament de l'activitat.</p><br>
+          <p>Els centres d'esplai treballen amb la intenció de ser un servei per a la comunitat més propera, amb el consentiment dels pares i mares, i amb l'objectiu de formar infants i joves per aconseguir que creixin com a persones des d'una perspectiva integral que té en compte el compromís social amb l'entorn.</p>
         </div>
 
         <div class="row">
@@ -79,8 +80,8 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Pere Pi</h3>
+                <img src="/img/monitores/helena.jpg" class="testimonial-img" alt="">
+                <h3>Helena Nualart</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                   Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
@@ -92,7 +93,7 @@
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <img src="/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Marta Mas</h3>
+                <h3>Pol Guerra</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                   Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
@@ -103,8 +104,8 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Manel Colas</h3>
+                <img src="/img/monitores/claudiaValles3.jpg" class="testimonial-img" alt="">
+                <h3>Clàudia Valles</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                   Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
@@ -116,7 +117,7 @@
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <img src="/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Nil Bayarri</h3>
+                <h3>Nora</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                   Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
@@ -146,8 +147,8 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Pere Pi</h3>
+                <img src="/img/monitores/ivan.jpeg" class="testimonial-img" alt="">
+                <h3>Ivan Martinez</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                   Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
@@ -158,8 +159,8 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Marta Mas</h3>
+                <img src="/img/monitores/elisenda.jpg" class="testimonial-img" alt="">
+                <h3>Elisenda de la Iglesia</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                   Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
@@ -170,11 +171,11 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Manel Colas</h3>
+                <img src="/img/monitores/marEscudero.jpg" class="testimonial-img" alt="">
+                <h3>Mar Escudero</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                  El que mes m'agrada fer en el meu temps lliure es anar a l'esplai, ja que em fa sentir viva i m'encanta aprendre coses cada dia. M'agraden per igual el mar i la muntanya? Anem junts d'excursio?
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -182,7 +183,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                <img src="/img/monitores/nil.jpeg" class="testimonial-img" alt="">
                 <h3>Nil Bayarri</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
@@ -195,7 +196,7 @@
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <img src="/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>Pere Pi</h3>
+                <h3>Sandra Vela</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                   Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
@@ -225,8 +226,8 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Pere Pi</h3>
+                <img src="/img/monitores/marta.jpeg" class="testimonial-img" alt="">
+                <h3>Marta Fontseca</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                   Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
@@ -237,8 +238,8 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Marta Mas</h3>
+                <img src="/img/monitores/eudald.jpg" class="testimonial-img" alt="">
+                <h3>Eudald Nualart</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                   Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
@@ -249,8 +250,8 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Manel Colas</h3>
+                <img src="/img/monitores/juliaSoler.jpg" class="testimonial-img" alt="">
+                <h3>Júlia Soler</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                   Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
@@ -262,7 +263,7 @@
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <img src="/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Nil Bayarri</h3>
+                <h3>Pau Ribas</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                   Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
@@ -292,8 +293,8 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Pere Pi</h3>
+                <img src="/img/monitores/comino.jpg" class="testimonial-img" alt="">
+                <h3>Víctor Comino</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                   Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
@@ -304,8 +305,8 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Marta Mas</h3>
+                <img src="/img/monitores/juliaRibes.jpg" class="testimonial-img" alt="">
+                <h3>Júlia Ribas</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                   Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
@@ -317,7 +318,7 @@
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <img src="/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Manel Colas</h3>
+                <h3>Inés Mendez</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                   Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
@@ -329,7 +330,7 @@
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <img src="/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Nil Bayarri</h3>
+                <h3>Pau Garcia</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                   Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
@@ -359,11 +360,11 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Pere Pi</h3>
+                <img src="/img/monitores/nicole.jpeg" class="testimonial-img" alt="">
+                <h3>Nicole Castillejo</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                  Sóc monitora a l’Esplai el Pas, on poc opinar lliurament i ser jo mateixa. En el meu temps lliure m’agrada llegir i anar a la muntanya d’excursió.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -371,8 +372,8 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Marta Mas</h3>
+                <img src="/img/monitores/xenia.jpg" class="testimonial-img" alt="">
+                <h3>Xènia Freixa</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                   Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
@@ -383,8 +384,8 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Manel Colas</h3>
+                <img src="/img/monitores/laia.jpg" class="testimonial-img" alt="">
+                <h3>Laia Roura</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                   Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
@@ -395,23 +396,11 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Nil Bayarri</h3>
+                <img src="/img/monitores/maria.jpg" class="testimonial-img" alt="">
+                <h3>Maria Carrasco</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                   Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>Victor Comino</h3>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -439,10 +428,10 @@
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <img src="/img/monitores/alvaro.jpg" class="testimonial-img" alt="">
-                <h3>Alvaro Arador</h3>
+                <h3>Álvaro Arador</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                    M'agrada venir al esplai perquè és un espai on puc compartir amb els infants i les companyes els meus interessos i experiències. En el meu temps lliure m'agrada trastejar amb les meves abelles!
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -454,7 +443,7 @@
                 <h3>Pau Jambou</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                    Sóc amant de la natura i l'esport. En el meu temps lliure m'agrada passar-lo on em sento lliure, al mar o a les muntanyes. Visca l'Esplai el Pas!
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -497,5 +486,9 @@
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+  
+@endsection
+
+@section('js')
   <script src="/js/nosaltress.js"></script>
 @endsection
