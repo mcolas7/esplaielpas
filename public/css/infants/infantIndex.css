@@ -68,3 +68,7 @@ body {
   box-shadow: 1px 1px #6730b0, 1px 1px #6730b0, 0px 0px #6730b0;
   transform: translateX(5px);
 }
+
+#buscador {
+  color: #6730b0;
+}

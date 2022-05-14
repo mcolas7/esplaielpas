@@ -171,10 +171,11 @@
 
 @section('js')
   <script src="/js/tutors/tutorCreate.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+  {{-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>  --}}
 
   @if (session('statusInfant') == 'ok')
     <script>
+      console.log('hola');
     Swal.fire(
       "Perfecte!",
       "Infant inscrit amb èxit!",
@@ -183,7 +184,9 @@
   @endif
 
   @if (session('statusTutor') == 'ok')
+  
     <script>
+      console.log('error');
     Swal.fire(
       "Perfecte!",
       "Tutor inscrit amb èxit!",

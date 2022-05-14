@@ -25,13 +25,47 @@ class InfantController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $text = $request->search;
+        
 
-        // if (request('buscar') == NULL) {
+        if ($text == '') {
 
+            $grups = Grup::get();
+            return view('infants.index', compact('grups'));
+
+        } else {
+
+            if (strpos($text, ' ') !== false) {
             
-        // } else {
+                $split = explode(" ", $text);
+                $nom = $split[0];
+                $cognoms = $split[1];
+    
+                $infants = Persona::where('nom', 'LIKE', "%" . $nom . "%")->where('cognoms', 'LIKE', "%" . $cognoms . "%")->whereNotNull('targeta_sanitaria')->get();
+                
+    
+            } else {
+                $infants = Persona::where('nom', 'LIKE', "%" . $text . "%")->orwhere('cognoms', 'LIKE',  "%" . $text. "%")->whereNotNull('targeta_sanitaria')->get();
+            }
+
+            $grups = [];
+
+            foreach ($infants as $persona) {
+                if ($persona->targeta_sanitaria != NULL) {
+                    $grups[] = $persona->infant->grup;
+                }
+                
+            }
+
+            if (empty($grups)) {
+
+                return view('infants.index', compact('grups','infants'))->with('statusSearch','ok');
+            }
+
+            return view('infants.index', compact('grups','infants'));
+        }    
 
         // $id = 6;
         // $grup = Grup::find($id);
@@ -53,8 +87,7 @@ class InfantController extends Controller
         //     'espurnes' => $espurnes
         // ]);
 
-        $grups = Grup::get();
-        return view('infants.index', compact('grups'));
+        
     
 
     }
@@ -71,19 +104,26 @@ class InfantController extends Controller
             
 
         } else {
-            $querys = Persona::where('nom', 'LIKE', '%'. $request->term . "%")->whereNotNull('targeta_sanitaria')->get();
+            
+            $querys = Persona::where('nom', 'LIKE', '%'. $request->term . "%")->orwhere('cognoms', 'LIKE',  "%" . $request->term . "%")->get();
+
+
         }
-
-        // si $request->term conte un espai fer consulta per nom i cognoms
-
         
 
         $data = [];
 
         foreach ($querys as $query) {
-            $data[] = [
-                'label' => $query->nom . " " . $query->cognoms
-            ];
+
+            if ($query->targeta_sanitaria != NULL) {
+                $data[] = [
+                    'label' => $query->nom . " " . $query->cognoms
+                ];
+            }
+
+            if (sizeof($data) > 4) {
+                break;
+            }
         }
 
         return $data;
