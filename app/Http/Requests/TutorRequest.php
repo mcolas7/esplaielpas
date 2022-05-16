@@ -29,7 +29,7 @@ class TutorRequest extends FormRequest
             'email' => 'required|email',
             'telefon' => 'required|min:9|max:9|digits:9',
             'data_naixement' => 'required',
-            'dni' => 'required', //'required|unique:persones'
+            'dni' => 'required|unique:persones',
             'carrer' => 'required',
             'poblacio_id' => 'required',
             'codi_postal' => 'required|min:5|max:5|digits:5',

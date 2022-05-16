@@ -11,11 +11,8 @@ function init() {
 
   data_naixement.setAttribute("max", calcularData(avui));
 
-  let dni = document.getElementById('dni');
-
-  dni.addEventListener('change', comprovarDNI(dni.value));
-
-  
+  let inputsCrearTutor = document.getElementById('inputsCrearTutor');
+  inputsCrearTutor.setAttribute('hidden', '');
 
 }
 
@@ -37,19 +34,6 @@ function calcularData (data) {
 	return dataFormat;
 }
 
-function comprovarDNI (dni) {
-    $.ajax({
-      url: 'tutors/create/existeix',
-      method: 'POST',
-      data: {
-        dni: dni
-      }
-    }).done(function(res){
-      alert(res);
-    }).fail(function(res) {
-      alert(res);
-    });
-}
 
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function () {

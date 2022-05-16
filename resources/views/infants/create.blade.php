@@ -62,7 +62,7 @@
                               Cal afegir un email vàlid.
                             </div>
                             <div class="valid-feedback">Email vàlid!</div>
-                          </div>
+                        </div>
               
             
                         <div class="col-12">

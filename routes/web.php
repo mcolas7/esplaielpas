@@ -38,10 +38,11 @@ Route::patch('/infant/{persona}', [InfantController::class,'update'])->name('inf
 Route::post('/infant', [InfantController::class,'store'])->name('infants.store');
 Route::get('/infant/{persona}', [InfantController::class,'show'])->name('infants.show'); // MOLT IMPORTANT QUE AQUESTA RUTA SEMPRE SIGUI LA ULTIMA
 
-Route::delete('/infant/{infant}', [InfantController::class,'destroy'])->name('infants.destroy');
+Route::delete('/infant/{persona}', [InfantController::class,'destroy'])->name('infants.destroy');
 
 
 Route::get('/tutor', [TutorController::class,'index'])->name('tutors.index');
+Route::post('/tutor/existeix', [TutorController::class,'existeix'])->name('tutors.existeix');
 Route::get('/tutor/crear', [TutorController::class,'create'])->name('tutors.create');
 
 Route::get('/tutor/{persona}/editar', [TutorController::class,'edit'])->name('tutors.edit');

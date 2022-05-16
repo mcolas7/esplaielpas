@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\InfantRequest;
 use App\Models\Curs;
 use App\Models\Grup;
 use App\Models\Infant;
-use App\Models\InfantSalut;
 use App\Models\Persona;
 use App\Models\Poblacio;
+use App\Models\InfantSalut;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\InfantRequest;
 
 class InfantController extends Controller
 {
@@ -61,7 +61,7 @@ class InfantController extends Controller
 
             if (empty($grups)) {
 
-                return view('infants.index', compact('grups','infants'))->with('statusSearch','ok');
+                return view('infants.index', compact('grups','infants'))->with('statusSearch','ko');
             }
 
             return view('infants.index', compact('grups','infants'));
@@ -275,20 +275,73 @@ class InfantController extends Controller
         ]);
     }
 
-    public function update (Persona $persona, InfantRequest $request) {
+    public function update (Persona $persona, Request $request) {
 
-        $persona->update($request->validated());
+        $this->validate($request, [
+            'nom' => 'required',
+            'cognoms' => 'required',
+            'email' => 'required|email',
+            'telefon' => 'required|min:9|max:9|digits:9',
+            'data_naixement' => 'required',
+            'curs' => 'required',
+            'grup' => 'required',
+            'targeta_sanitaria' => 'required|unique:persones,targeta_sanitaria,'.$persona->persona_id.',persona_id',
+            'carrer' => 'required',
+            'poblacio_id' => 'required',
+            'codi_postal' => 'required|min:5|max:5|digits:5',
+            'dni' => 'nullable|unique:persones,dni,'.$persona->persona_id.',persona_id',
+            'alergies' => 'required',
+            'alergia' => ''
+        ],[
+            'targeta_sanitaria.unique' => 'La targeta sanitària ja està registrada i no es pot repetir.',
+            'dni.unique' => 'El DNI ja està registrat i no es pot repetir.'
+        ]);
+
+        $persona->poblacio_id = $request->poblacio_id;
+        $persona->nom = $request->nom;
+        $persona->cognoms = $request->cognoms;
+        $persona->email = $request->email;
+        $persona->telefon = $request->telefon;
+        $persona->carrer = $request->carrer;
+        $persona->codi_postal = $request->codi_postal;
+        $persona->data_naixement = $request->data_naixement;
+        $persona->dni = $request->dni;
+        $persona->targeta_sanitaria = $request->targeta_sanitaria;
+        $persona->save();
 
         $infant = $persona->infant;
+        $infantSalut = $infant->infantSalut;
 
-        return $infant;
+        $infant->grup_id = $request->grup;
+        $infant->curs_id = $request->curs;
+        $infant->save();
 
-        return redirect()->route('infants.index')->with('status', "Infant actualitzat correctament");
-        // validar formulari i fer update infant
+        if($request['alergies'] == 1) {
+
+            $infantSalut->alergies = $request->alergies;
+            $infantSalut->alergia = $request->alergia;
+
+        } else {
+
+            $infantSalut->alergies = $request->alergies;
+            $infantSalut->alergia = NULL;
+        }   
+        
+        $infantSalut->save();
+
+        return redirect()->route('infants.index')->with('status', "Infant actualitzat correctament.");
     }
 
 
-    public function destroy () {
-       // eliminar infant
+    public function destroy (Persona $persona) {
+
+       $infant = $persona->infant;
+       $infantSalut = $infant->infantSalut;
+
+       $infantSalut->delete();
+       $infant->delete();
+       $persona->delete();
+
+       return redirect()->route('infants.index')->with('statusEliminar','Infant eliminat correctament.');
     }
 }

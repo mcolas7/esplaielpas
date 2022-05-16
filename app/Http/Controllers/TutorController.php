@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\TutorDNIRequest;
 use App\Models\Curs;
 use App\Models\Grup;
 use App\Models\User;
@@ -19,6 +18,10 @@ use Illuminate\Support\Facades\Mail;
 
 class TutorController extends Controller
 {
+    /**
+     * function will apply the auth middleware to all
+     * methods in the ProjectController except the index and show methods
+     */
     public function __construct() {
         //$this->middleware('auth')->only('create', 'edit'); Si volem fer que pels metodes create i edit l'usuari hagi d'estar autentificat
         $this->middleware('auth')->except('index','show'); // S'aplicara el middleware auth (l'usuari haura d'estar autenitificat) a tots els metodes del ProjectController excepte index i show
@@ -36,19 +39,34 @@ class TutorController extends Controller
         $grups = Grup::get();
         return view('tutors.index', compact('grups'));
     
-
     }
 
-    // MOSTRAR UN INFANT
-    public function show() {
-        
+    /**
+     * It takes a `Persona` object as an argument and returns a view called `tutors.show` with the
+     * `Persona` object passed to the view as `persona`.
+     * 
+     * @param Persona persona The model instance passed to the route
+     * 
+     * @return The view tutors.show with the variable persona.
+     */
+    public function show(Persona $persona) {
+        return view('tutors.show', [
+            'persona' => $persona,
+        ]);
     }
 
     /**
      * Per mostrar la vista
      */
     public function create() {
+
         $infant = Persona::latest()->whereNotNull('targeta_sanitaria')->first();
+
+        $tutors = $infant->infant->tutors;
+
+        if (count($tutors) == 2) {
+            return redirect()->route('infants.index')->with('statusTutor', 'ok');
+        }
 
         $poblacions = Poblacio::get();
 
@@ -62,26 +80,56 @@ class TutorController extends Controller
     /**
      * Per processar el formulari
      */
-    public function store (TutorRequest $request, TutorDNIRequest $requestDNI) {
+    public function store () { // TutorRequest $request
 
-        $infant = Persona::latest()->whereNotNull('targeta_sanitaria')->first();
+        $personaInfant = Persona::latest()->whereNotNull('targeta_sanitaria')->first();
 
         $existeixTutor = DB::table('persones as p')->join('tutors as t','p.persona_id','=','t.persona_id')->where('p.dni', request('dni'))->whereNull('p.targeta_sanitaria')->exists();
 
-        return $existeixTutor;
-
         if ($existeixTutor == true) {
+            $personaTutor = Persona::where('dni', request('dni'))->whereNull('targeta_sanitaria')->first();
 
-            return redirect()->route('tutors.create')->with('tutorRegistrat', 'Aquest tutor ja esta registrat!');
+            $tutor = $personaTutor->tutor;
+
+            $infantId = $personaInfant->infant->infant_id;
+
+            $tutor->infants()->attach($infantId);
+
+            return redirect()->route('tutors.create')->with('statusTutor', 'ok');
 
         } else {
-            $persona = Persona::create($request->validated());
+
+            $formulari = request()->validate([
+                'nom' => 'required',
+                'cognoms' => 'required',
+                'email' => 'required|email',
+                'telefon' => 'required|min:9|max:9|digits:9',
+                'data_naixement' => 'required',
+                'dni' => 'required|unique:persones',
+                'carrer' => 'required',
+                'poblacio_id' => 'required',
+                'codi_postal' => 'required|min:5|max:5|digits:5',
+            ], [
+                'dni.unique' => 'El DNI ja està registrat i no es pot repetir.'
+            ]);
+
+            $persona = Persona::create([
+                'poblacio_id' => $formulari['poblacio_id'],
+                'nom' => $formulari['nom'], 
+                'cognoms'=> $formulari['cognoms'],
+                'email'=> $formulari['email'],
+                'telefon'=> $formulari['telefon'],
+                'carrer'=> $formulari['carrer'],
+                'codi_postal' => $formulari['codi_postal'],
+                'data_naixement' => $formulari['data_naixement'],
+                'dni' => $formulari['dni']
+            ]);
 
             $tutor = Tutor::create([
-                'persona_id' => $persona['persona_id'],
+                'persona_id' => $persona->persona_id,
             ]);
     
-            $infantId = $infant->infant->infant_id;
+            $infantId = $personaInfant->infant->infant_id;
     
             $tutor->infants()->attach($infantId);
     
@@ -131,5 +179,12 @@ class TutorController extends Controller
 
     public function destroy () {
        // eliminar infant
+    }
+
+    public function existeix (Request $request) {
+
+        $tutor = Persona::where('dni', $request->dni)->whereNull('targeta_sanitaria')->get();
+
+        return response(json_encode($tutor),200)->header('Content-type','text-plain');
     }
 }

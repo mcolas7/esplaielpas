@@ -9,7 +9,8 @@ function init() {
 
   let data_naixement = document.getElementById('data_naixement');
 
-  data_naixement.setAttribute("max", calcularData(avui));
+  data_naixement.setAttribute("max", calcularData(avui, 6));
+  data_naixement.setAttribute("min", calcularData(avui, 18));
 
 	let alergies = document.getElementById("alergies");
 
@@ -41,8 +42,8 @@ function mostrarTextareaAlergies () {
     }
 }
 
-function calcularData (data) {
-	let dataFormat = data.getFullYear()-6;
+function calcularData (data, anys) {
+	let dataFormat = data.getFullYear()-anys;
  
 	if (data.getMonth()+1 >= 10) {
 		dataFormat += "-"+(data.getMonth() + 1);

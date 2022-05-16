@@ -12,7 +12,7 @@
         <ul class="nav nav-pills">
           <li class="nav-item"><a href="{{ route('home') }}" class="nav-link {{ request()->routeIs('home') ? 'active' : ''}}" aria-current="page">INICI</a></li>
           <li class="nav-item"><a href="{{ route('nosaltres') }}" class="nav-link {{ request()->routeIs('nosaltres') ? 'active' : '' }}">NOSALTRES</a></li>
-          <li class="nav-item"><a href="{{ route('blog') }}" class="nav-link {{ request()->routeIs('blog') ? 'active' : ''}}">BLOG</a></li>
+          {{-- <li class="nav-item"><a href="{{ route('blog') }}" class="nav-link {{ request()->routeIs('blog') ? 'active' : ''}}">BLOG</a></li> --}}
           @auth
             <li class="nav-item"><a href="{{ route('excursions') }}" class="nav-link {{ request()->routeIs('excursions') ? 'active' : ''}}">EXCURSIONS</a></li>
             <li class="nav-item"><a href="{{ route('infants.index') }}" class="nav-link {{ request()->routeIs('infants.index') ? 'active' : ''}}">INFANTS</a></li>

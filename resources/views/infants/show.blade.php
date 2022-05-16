@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'Editar infant')
+@section('title', 'Mostrar infant')
 
 @section('css')
     <link href="/css/infants/infantEdit.css" rel="stylesheet">
@@ -128,7 +128,7 @@
 
                       <hr class="my-4">
             
-                        <a class="w-100 btn btn-primary btn-lg" href="{{ route('infants.index')}}" id="botoBack">TORNAR LLISTAT INFANTS</a>
+                      <a class="w-100 btn btn-primary btn-lg" href="{{ route('infants.index')}}" id="botoBack">TORNAR LLISTAT INFANTS</a>
                     </div> 
                 </form>
             </div>
