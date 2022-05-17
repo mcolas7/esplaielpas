@@ -56,7 +56,6 @@
                 <th scope="col" class="col-sm-1">NOM</th>
                 <th scope="col" class="col-sm-2">COGNOMS</th>
                 <th scope="col" class="col-sm-3">TUTORS</th>
-                {{-- <th scope="col" class="col-sm-3">EMAIL</th> --}}
                 <th scope="col" class="col-sm-2">TELÈFON</th>
                 <th scope="col" class="col-sm-3">AL·LÈRGIA</th>
                 <th scope="col" class="col-sm-1" style="text-align: center;">ACCIONS</th>
@@ -71,7 +70,13 @@
 
                     <td>{{$infant['nom']}}</td>
                     <td>{{$infant['cognoms']}}</td>
-                    <td>{{$infant['email']}}</td>
+                    <td>
+                      @forelse ($infant->infant->tutors as $tutor)
+                      <a href="{{ route('tutors.show', $tutor->persona) }}" style="color: #6730b0;">{{$tutor->persona->nom . " " . $tutor->persona->cognoms}}</a>
+                      @empty
+                        No te cap tutor!
+                      @endforelse
+                    </td>
                     <td>{{$infant['telefon']}}</td>
                     <td>{{$infant->infant->infantSalut['alergies'] == 1 ? $infant->infant->infantSalut->alergia :'No'}}</td>
                     <td style="text-align: center;">
@@ -82,7 +87,7 @@
                         @method('DELETE')
                         <button style="border: none;"><i class="bi bi-trash" style="color: #6730b0;"></i></button>
                       </form>
-                      <a class="delete" title="Delete" data-toggle="tooltip"></a>
+                      {{-- <a class="delete" title="Delete" data-toggle="tooltip"></a> --}}
                     </td>
                   @endif
                   
@@ -98,13 +103,13 @@
                     <td>{{$infant->persona->cognoms}}</td>
                     <td>
                       @forelse ($infant->tutors as $tutor)
-                        <a href="{{ route('tutors.show', $tutor->persona) }}">{{$tutor->persona->nom . " " . $tutor->persona->cognoms}}</a>
+                        <a href="{{ route('tutors.show', $tutor->persona) }}" style="color: #6730b0;">{{$tutor->persona->nom . " " . $tutor->persona->cognoms}}</a>
                       @empty
                         No te cap tutor!
                       @endforelse
                     </td>
                     
-                    {{-- <td>{{$infant->persona->email}}</td> --}}
+
                     <td>{{$infant->persona->telefon}}</td>
                     <td>{{$infant->infantSalut['alergies'] == 1 ? $infant->infantSalut->alergia :'No'}}</td>
                     <td style="text-align: center;">
@@ -217,6 +222,15 @@
     </script>
   @endif
 
+  @if (session()->has('editatTutor'))
+    <script>
+    Swal.fire(
+      "Perfecte!",
+      "{{ session()->get('editatTutor')}}",
+      "success")
+    </script>
+  @endif
+
   <script>
     $('.formulariEliminar').submit(function(e) {
       e.preventDefault();
@@ -243,6 +257,15 @@
   Swal.fire(
     "Perfecte!",
     "{{ session()->get('statusEliminar')}}",
+    "success")
+  </script>
+@endif
+
+@if (session()->has('statusEliminarTutor'))
+<script>
+  Swal.fire(
+    "Perfecte!",
+    "{{ session()->get('statusEliminarTutor')}}",
     "success")
   </script>
 @endif

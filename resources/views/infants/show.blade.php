@@ -140,5 +140,5 @@
 @endsection
 
 @section('js')
-<script src="/js/infantEdit.js"></script> 
+  <script src="/js/infantEdit.js"></script> 
 @endsection

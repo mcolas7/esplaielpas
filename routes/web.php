@@ -51,7 +51,7 @@ Route::patch('/tutor/{persona}', [TutorController::class,'update'])->name('tutor
 Route::post('/tutor', [TutorController::class,'store'])->name('tutors.store');
 Route::get('/tutor/{persona}', [TutorController::class,'show'])->name('tutors.show'); // MOLT IMPORTANT QUE AQUESTA RUTA SEMPRE SIGUI LA ULTIMA
 
-Route::delete('/tutor/{infant}', [TutorController::class,'destroy'])->name('tutors.destroy');
+Route::delete('/tutor/{persona}', [TutorController::class,'destroy'])->name('tutors.destroy');
 
 // AQUESTES 7 RUTES ES PODEN SIMPLIFICAR AMB
 

@@ -22,7 +22,15 @@ class Persona extends Model
         return $this->hasOne(Tutor::class,'persona_id');
     }
 
+    public function monitor() {
+        return $this->hasOne(Monitor::class,'persona_id');
+    }
+
     public function poblacio() {
         return $this->belongsTo(Poblacio::class, 'poblacio_id');
+    }
+
+    public function user() {
+        return $this->hasOne(User::class, 'persona_id');
     }
 }

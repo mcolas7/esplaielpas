@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Curs;
 use App\Models\Grup;
 use App\Models\User;
 use App\Models\Tutor;
@@ -12,7 +11,6 @@ use App\Models\Poblacio;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Http\Requests\TutorRequest;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 
@@ -35,10 +33,8 @@ class TutorController extends Controller
      */
     public function index()
     {
-
         $grups = Grup::get();
-        return view('tutors.index', compact('grups'));
-    
+        return view('infants.index', compact('grups'));
     }
 
     /**
@@ -152,33 +148,62 @@ class TutorController extends Controller
 
         $poblacions = Poblacio::get();
 
-        $cursos = Curs::get();
-
-        $grups = Grup::get();
-
-        return view('infants.edit', [
+        return view('tutors.edit', [
             'persona' => $persona,
-            'poblacions' => $poblacions,
-            'cursos' => $cursos,
-            'grups' => $grups
+            'poblacions' => $poblacions
         ]);
     }
 
-    public function update (Persona $persona, TutorRequest $request) {
+    public function update (Persona $persona, Request $request) {
 
-        $persona->update($request->validated());
 
-        $infant = $persona->infant;
+        $this->validate($request, [
+            'nom' => 'required',
+            'cognoms' => 'required',
+            'email' => 'required|email',
+            'telefon' => 'required|min:9|max:9|digits:9',
+            'data_naixement' => 'required',
+            'carrer' => 'required',
+            'poblacio_id' => 'required',
+            'codi_postal' => 'required|min:5|max:5|digits:5',
+            'dni' => 'nullable|unique:persones,dni,'.$persona->persona_id.',persona_id'
+        ],[
+            'dni.unique' => 'El DNI ja està registrat i no es pot repetir.'
+        ]);
 
-        return $infant;
+        $persona->poblacio_id = $request->poblacio_id; 
+        $persona->nom = $request->nom;
+        $persona->cognoms = $request->cognoms;
+        $persona->email = $request->email;
+        $persona->telefon = $request->telefon;
+        $persona->carrer = $request->carrer;
+        $persona->codi_postal = $request->codi_postal;
+        $persona->data_naixement = $request->data_naixement;
+        $persona->dni = $request->dni;
+        $persona->save();
 
-        return redirect()->route('infants.index')->with('status', "Infant actualitzat correctament");
-        // validar formulari i fer update infant
+        $user = $persona->user;
+
+        $user->user_name = $request->dni;
+        $user->save();
+
+        return redirect()->route('infants.index')->with('editatTutor', "Tutor actualitzat correctament");
+
     }
 
 
-    public function destroy () {
-       // eliminar infant
+    public function destroy (Persona $persona) {
+
+        $tutor = $persona->tutor;
+        $user = $persona->user;
+        
+        $tutor->infants()->detach();
+
+        $tutor->delete();
+        $user->delete();
+        $persona->delete();
+        
+        return redirect()->route('infants.index')->with('statusEliminarTutor','Tutor eliminat correctament.');
     }
 
     public function existeix (Request $request) {

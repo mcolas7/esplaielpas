@@ -50,4 +50,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function persona() {
+        return $this->belongsTo(Persona::class,'persona_id');
+    }
 }
