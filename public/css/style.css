@@ -663,7 +663,7 @@ section {
 .tabs .nav-link.active {
   background: #6730b0;
   color: #fff;
-  border-color: #e03a3c;
+  border-color: #ffd81f;
 }
 @media (max-width: 768px) {
   .tabs .nav-link i {

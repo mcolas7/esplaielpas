@@ -3,7 +3,7 @@
 @section('title', 'Nosaltres')
 
 @section('css')
-    <link href="/css/nosaltress.css" rel="stylesheet">
+  <link href="/css/nosaltress.css" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -199,7 +199,7 @@
                 <h3>Sandra Vela</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                  M'agrada molt transemtre als meus infants els valors i les idees que hem van ensenyar els meus monitors quan era infant, d'aquesta manera s'anirà transmetren de generació en generació i la màgia de l'Esplai el Pas no es perdrà mai
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -297,7 +297,7 @@
                 <h3>Víctor Comino</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                    Hola, sóc en Víctor, un noi de Palafolls de tota la vida a qui li apasiona la música i l'escalada.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -322,18 +322,6 @@
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                   Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Pau Garcia</h3>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -443,7 +431,7 @@
                 <h3>Pau Jambou</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Sóc amant de la natura i l'esport. En el meu temps lliure m'agrada passar-lo on em sento lliure, al mar o a les muntanyes. Visca l'Esplai el Pas!
+                    Sóc amant de la natura i l'esport. En el meu temps lliure m'agrada passar-lo on em sento lliure, al mar o a les muntanyes. Visca l'esplai!
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>

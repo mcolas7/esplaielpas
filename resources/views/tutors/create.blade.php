@@ -26,7 +26,7 @@
                 @endforeach
               @endif
 
-                <form method="POST" action="{{ route('tutors.store') }}" class="needs-validation mt-2" id="formulariTutor" novalidate>
+                <form method="POST" action="{{ route('tutors.store', $infant) }}" class="needs-validation mt-2" id="formulariTutor" novalidate>
                     @csrf
 
                     <div class="row g-3">

@@ -43,12 +43,12 @@ Route::delete('/infant/{persona}', [InfantController::class,'destroy'])->name('i
 
 Route::get('/tutor', [TutorController::class,'index'])->name('tutors.index');
 Route::post('/tutor/existeix', [TutorController::class,'existeix'])->name('tutors.existeix');
-Route::get('/tutor/crear', [TutorController::class,'create'])->name('tutors.create');
+Route::get('/tutor/{persona}/crear', [TutorController::class,'create'])->name('tutors.create'); // Route::get('/tutor/{persona}/crear', [TutorController::class,'create'])->name('tutors.create');
 
 Route::get('/tutor/{persona}/editar', [TutorController::class,'edit'])->name('tutors.edit');
 Route::patch('/tutor/{persona}', [TutorController::class,'update'])->name('tutors.update'); // Per actualitzar un formulari
 
-Route::post('/tutor', [TutorController::class,'store'])->name('tutors.store');
+Route::post('/tutor/{persona}', [TutorController::class,'store'])->name('tutors.store');  //Route::post('/tutor', [TutorController::class,'store'])->name('tutors.store');
 Route::get('/tutor/{persona}', [TutorController::class,'show'])->name('tutors.show'); // MOLT IMPORTANT QUE AQUESTA RUTA SEMPRE SIGUI LA ULTIMA
 
 Route::delete('/tutor/{persona}', [TutorController::class,'destroy'])->name('tutors.destroy');

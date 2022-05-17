@@ -72,10 +72,14 @@
                     <td>{{$infant['cognoms']}}</td>
                     <td>
                       @forelse ($infant->infant->tutors as $tutor)
-                      <a href="{{ route('tutors.show', $tutor->persona) }}" style="color: #6730b0;">{{$tutor->persona->nom . " " . $tutor->persona->cognoms}}</a>
+                        <a href="{{ route('tutors.show', $tutor->persona) }}" style="color: #6730b0;">{{$tutor->persona->nom . " " . $tutor->persona->cognoms}}</a>
                       @empty
-                        No te cap tutor!
+                        <a href="{{ route('tutors.create', $infant)}}" style="color: #6730b0;"><i class="bi bi-person-plus"></i> Afegir Tutor</a>
                       @endforelse
+                      @if (count($infant->infant->tutors) < 2 && count($infant->infant->tutors) > 0) {
+                        <a href="{{ route('tutors.create', $infant)}}" style="color: #6730b0;"><i class="bi bi-person-plus"></i> Afegir Tutor</a>
+                      }
+                      @endif
                     </td>
                     <td>{{$infant['telefon']}}</td>
                     <td>{{$infant->infant->infantSalut['alergies'] == 1 ? $infant->infant->infantSalut->alergia :'No'}}</td>
@@ -105,8 +109,12 @@
                       @forelse ($infant->tutors as $tutor)
                         <a href="{{ route('tutors.show', $tutor->persona) }}" style="color: #6730b0;">{{$tutor->persona->nom . " " . $tutor->persona->cognoms}}</a>
                       @empty
-                        No te cap tutor!
+                        <a href="{{ route('tutors.create', $infant->persona)}}" style="color: #6730b0;"><i class="bi bi-person-plus"></i> Afegir Tutor</a>
                       @endforelse
+                      @if (count($infant->tutors) < 2 && count($infant->tutors) > 0) {
+                        <a href="{{ route('tutors.create', $infant->persona)}}" style="color: #6730b0;"><i class="bi bi-person-plus"></i> Afegir Tutor</a>
+                      }
+                      @endif
                     </td>
                     
 

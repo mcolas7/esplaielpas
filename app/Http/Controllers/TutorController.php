@@ -27,9 +27,9 @@ class TutorController extends Controller
 
 
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * Display a listing of the resource. It gets all the groups from the database and passes them to the view.
+     * 
+     * @return The view 'infants.index' with the variable 'grups'
      */
     public function index()
     {
@@ -37,6 +37,7 @@ class TutorController extends Controller
         return view('infants.index', compact('grups'));
     }
 
+    
     /**
      * It takes a `Persona` object as an argument and returns a view called `tutors.show` with the
      * `Persona` object passed to the view as `persona`.
@@ -54,11 +55,20 @@ class TutorController extends Controller
     /**
      * Per mostrar la vista
      */
-    public function create() {
 
-        $infant = Persona::latest()->whereNotNull('targeta_sanitaria')->first();
+    
+    /**
+     * It creates a new tutor for an infant. Displays the view containing the form for creating a 
+     * new tutor.
+     * 
+     * @param Persona persona is the infant
+     */
+    public function create(Persona $persona) {
+        
+        //$infant = Persona::latest()->whereNotNull('targeta_sanitaria')->first();
+        
 
-        $tutors = $infant->infant->tutors;
+        $tutors = $persona->infant->tutors;
 
         if (count($tutors) == 2) {
             return redirect()->route('infants.index')->with('statusTutor', 'ok');
@@ -69,16 +79,20 @@ class TutorController extends Controller
         return view('tutors.create', [
             'persona' => new Persona,
             'poblacions' => $poblacions,
-            'infant' => $infant
+            'infant' => $persona
         ]);
     }
+
+    
 
     /**
      * Per processar el formulari
      */
-    public function store () { // TutorRequest $request
+    public function store (Persona $persona) { // TutorRequest $request
 
-        $personaInfant = Persona::latest()->whereNotNull('targeta_sanitaria')->first();
+        //$personaInfant = Persona::latest()->whereNotNull('targeta_sanitaria')->first();
+
+        $personaInfant = $persona;
 
         $existeixTutor = DB::table('persones as p')->join('tutors as t','p.persona_id','=','t.persona_id')->where('p.dni', request('dni'))->whereNull('p.targeta_sanitaria')->exists();
 
@@ -87,11 +101,11 @@ class TutorController extends Controller
 
             $tutor = $personaTutor->tutor;
 
-            $infantId = $personaInfant->infant->infant_id;
+            $infantId = $personaInfant->infant->infant_id; //$infantId = $personaInfant->infant->infant_id;
 
             $tutor->infants()->attach($infantId);
 
-            return redirect()->route('tutors.create')->with('statusTutor', 'ok');
+            return redirect()->route('tutors.create', $personaInfant)->with('statusTutor', 'ok');
 
         } else {
 
@@ -125,7 +139,7 @@ class TutorController extends Controller
                 'persona_id' => $persona->persona_id,
             ]);
     
-            $infantId = $personaInfant->infant->infant_id;
+            $infantId = $personaInfant->infant->infant_id; //$infantId = $personaInfant->infant->infant_id;
     
             $tutor->infants()->attach($infantId);
     
@@ -139,7 +153,7 @@ class TutorController extends Controller
             
             Mail::to($persona['email'])->queue(new UserMail($persona, $password)); 
     
-            return redirect()->route('tutors.create')->with('statusTutor', 'ok');
+            return redirect()->route('tutors.create', $personaInfant)->with('statusTutor', 'ok');
         }
     }
 

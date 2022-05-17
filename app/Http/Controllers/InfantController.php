@@ -338,6 +338,7 @@ class InfantController extends Controller
        $infant = $persona->infant;
        $infantSalut = $infant->infantSalut;
 
+       $infant->tutors()->detach();
        $infantSalut->delete();
        $infant->delete();
        $persona->delete();
