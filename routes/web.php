@@ -2,8 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\InfantController;
 use App\Http\Controllers\TutorController;
+use App\Http\Controllers\InfantController;
+use App\Http\Controllers\ExcursioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,8 +21,7 @@ Route::view('/', 'home')->name('home');
 Route::post('home', [HomeController::class,'store'])->name('home.contact');
 
 Route::view('/nosaltres', 'nosaltres')->name('nosaltres');
-Route::view('/blog', 'blog')->name('blog');
-Route::view('/excursions', 'excursions')->name('excursions')->middleware('auth'); // SI AFEGIM EL METODE ->middleware('auth') nomes podrem accedir a aquestes rutes si estem autenificats
+//Route::view('/excursions', 'excursions')->name('excursions')->middleware('auth'); // SI AFEGIM EL METODE ->middleware('auth') nomes podrem accedir a aquestes rutes si estem autenificats
 
 
 // PELS CONTROLADORS RESOURCES
@@ -53,11 +53,24 @@ Route::get('/tutor/{persona}', [TutorController::class,'show'])->name('tutors.sh
 
 Route::delete('/tutor/{persona}', [TutorController::class,'destroy'])->name('tutors.destroy');
 
+Route::get('/excursio', [ExcursioController::class,'index'])->name('excursions.index');
+Route::get('/excursio/crear', [ExcursioController::class,'create'])->name('excursions.create'); // Route::get('/tutor/{persona}/crear', [TutorController::class,'create'])->name('tutors.create');
+
+Route::get('/excursio/{excursio}/editar', [ExcursioController::class,'edit'])->name('excursions.edit');
+Route::patch('/excursio/{excursio}', [ExcursioController::class,'update'])->name('excursions.update'); // Per actualitzar un formulari
+
+Route::post('/excursio', [ExcursioController::class,'store'])->name('excursions.store');  //Route::post('/tutor', [TutorController::class,'store'])->name('tutors.store');
+Route::get('/excursio/{excursio}', [ExcursioController::class,'show'])->name('excursions.show'); // MOLT IMPORTANT QUE AQUESTA RUTA SEMPRE SIGUI LA ULTIMA
+
+Route::delete('/excursio/{excursio}', [ExcursioController::class,'destroy'])->name('excursions.destroy');
+
 // AQUESTES 7 RUTES ES PODEN SIMPLIFICAR AMB
 
 //Route::resource('infant', InfantController::class)->parameters(['portafolio' => 'project'])->names('projects')->middleware('auth'); // SI AFEGIM EL METODE ->middleware('auth') nomes podrem accedir a aquestes rutes si estem autenificats
 
-
+Route::get('/404', function () { // PELS ERRORS?
+    return abort(404);
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

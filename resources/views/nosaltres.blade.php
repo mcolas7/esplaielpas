@@ -52,14 +52,13 @@
           </div>
           <div class="col-lg-8 pt-4 pt-lg-0 content">
             <h3>Història</h3>
-            <p>
-              Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis.
-              Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque. Aliquid amet quidem ut quaerat cupiditate. Ab et eum qui repellendus omnis culpa magni laudantium dolores.
+            <p style="text-align: justify">
+              L'esplai el Pas neix a Palafolls el 1994 amb la idea de trobar un lloc en el que infants i joves es puguin retrobar per realitzar accions significatives. Apareix quan un grup de joves voluntàries decideix crear un espai fora de l'escola on educar als infants de forma didàctica, és a dir, mitjançant jocs i dinàmiques que fan que l'aprenentatge sigui visual i emocional. Es forma així una associació amb l'únic objectiu de compartir i donar un cop de mà en el desenvolupament d'infants i joves.
             </p>
-            <p>
-              Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis. Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque. Aliquid amet quidem ut quaerat cupiditate. Ab et eum qui repellendus omnis culpa magni laudantium dolores.
+            <p style="text-align: justify">
+              Des de llavors fins ara han passat per l'esplai milers d'infants i molts s'han convertit en monitors que també han crescut i han après dels més petits. A dia d'avui ja hi ha vells monitors que porten els seus fills a l'esplai com ells havien anat quan eren petits. Per tant, és una entitat que mai para de renovar-se i adaptar-se als nous temps recollint, però, tot els aprenentatges que s'han adquirit en aquests anys que fa que l'esplai es va fundar.
             </p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur ea nihil, natus impedit assumenda vitae. Totam, optio eos? Voluptatum est inventore quasi doloribus assumenda soluta necessitatibus error a aut odio!</p>
+            <p>Encara ens queden molts anys per viure!</p>
           </div>
         </div>
 

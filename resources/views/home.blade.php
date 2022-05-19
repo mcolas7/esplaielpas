@@ -43,10 +43,10 @@
           <div class=" col-xl-5 d-flex align-items-stretch">
             <div class="content">
               <h3 class="queesesplai mb-5 pt-0">Què és l'esplai?</h3>
-              <p>
+              <p class="justify">
                 És una associació voluntària sense ànim de lucre que treballa per a l'educació en el lleure d'infants i joves. Està considerada una opció d'educació no formal. Entre les diferents activitats que es poden fer en un esplai, en destaquen les següents:el joc, com a element clau en el desenvolupament personal i interpersonal; el taller; l'excursió, com a descoberta de l'entorn i el medi natural; l'esport; la convivència; la implicació personal; la participació i la presa de responsabilitats en el desenvolupament de l'activitat.
               </p>
-              <p>Els centres d'esplai treballen amb la intenció de ser un servei per a la comunitat més propera, amb el consentiment dels pares i mares, i amb l'objectiu de formar infants i joves per aconseguir que creixin com a persones des d'una perspectiva integral que té en compte el compromís social amb l'entorn.</p>
+              <p class="justify">Els centres d'esplai treballen amb la intenció de ser un servei per a la comunitat més propera, amb el consentiment dels pares i mares, i amb l'objectiu de formar infants i joves per aconseguir que creixin com a persones des d'una perspectiva integral que té en compte el compromís social amb l'entorn.</p>
               <a href="vista/nosaltresView.html" class="about-btn"><span>Nosaltres</span> <i class="bx bx-chevron-right"></i></a>
             </div>
           </div>
@@ -136,8 +136,8 @@
             <div class="row">
               <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0" data-aos="fade-up" data-aos-delay="100">
                 <h3>Esplai cada dissabte de 16h a 18h!</h3>
-                <p>
-                  Cada dissabte de 16h a 18h ens trobem totes al local de l'Esplai el Pas per realitzar diferents activitats. Ens dividim en diferents grups per edats els quals cada grup té els seus propis objectius anuals. Els diferents grups de l'Esplai el Pas són:
+                <p class="justify">
+                  Els dissabtes ens reunim monitores, infants i joves per realitzar diferents activitats que potencien la creativitat i l'implicació de totes. Per fer-ho ens dividim en grups d'edat amb els que fem dinàmiques i jocs que ens fan pensar, riure i passar-nos-ho genial. Els diferents grups de l'Esplai el Pas són:
                 </p>
                 <ul>
                   <li><i class="bi bi-backspace-reverse-fill"></i> Llobatons: 1r i 2n de primària.</li>
@@ -145,6 +145,7 @@
                   <li><i class="bi bi-backspace-reverse-fill"></i> Llampecs: 5è i 6è de primària.</li>
                   <li><i class="bi bi-backspace-reverse"></i> Xarxets: 1r i 2n de l'ESO.</li>
                   <li><i class="bi bi-backspace-reverse-fill"></i> Marmotes: 3r i 4t de l'ESO.</li>
+                  <li><i class="bi bi-backspace-reverse"></i> Espurnes: 1r i 2n de Batxillerat.</li>
                 </ul>
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="200">
@@ -155,9 +156,9 @@
           <div class="tab-pane" id="tab-2">
             <div class="row">
               <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                <h3>El primer i el tercer trimestre l'esplai marxa de colònies!</h3>
-                <p>
-                  Dos cops a l'any l'esplai marxa de ruta (el primer i el tercer trimestre). Marxem a una casa de colònies i realitzem diferents activitats durant tot el cap de setmana. Els grups de l'esplai que marxen de colònies són:
+                <h3>L'Esplai el Pas marxa de colònies!</h3>
+                <p class="justify">
+                  Dos cops a l'any marxem totes juntes de colònies per trobar nous personatges i ajudar-los a resoldre els seus problemes de la millor manera que sabem, amb somriures i rialles d'esplai. Estem totes juntes descobrint els participants dels altres grups d'edat i barrejant-nos per conèixer a totes les esplaieres que ens acompanyen. Els grups de l'esplai que marxen de colònies són:
                 </p>
                 <ul>
                   <li><i class="bi bi-backspace-reverse-fill"></i> Llobatons: 1r i 2n de primària.</li>
@@ -165,6 +166,7 @@
                   <li><i class="bi bi-backspace-reverse-fill"></i> Llampecs: 5è i 6è de primària.</li>
                   <li><i class="bi bi-backspace-reverse"></i> Xarxets: 1r i 2n de l'ESO.</li>
                   <li><i class="bi bi-backspace-reverse-fill"></i> Marmotes: 3r i 4t de l'ESO.</li>
+                  <li><i class="bi bi-backspace-reverse"></i> Espurnes: 1r i 2n de Batxillerat.</li>
                 </ul>
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center">
@@ -176,13 +178,14 @@
             <div class="row">
               <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
                 <h3>Cada setmana santa marxem d'acampada!</h3>
-                <p>
-                  Per setmana santa l'Esplai el Pas marxa 5 dies d'acampada a la muntanya. En aquest 5 dies desconectem del nostre dia a dia, de la tecnologia i aprofitem per realitzar excursions i coneixer millor l'entron que ens rodeja. Aprendre de la naturalesa i aprendre a respectar-la. Els grups de l'esplai que marxen d'acampada són:
+                <p class="justify">
+                  Els cinc primers dies de setmana santa marxem d'acampada els grups de més grans. Creem un lloc de desconnexió de l'escola, l'institut i les tecnologies, un espai on gaudir de la natura i del temps que ens dediquem les unes a les altres. Són cinc dies d'emocions i de descobrir coses noves com cuinar per totes o muntar i dormir dins una tenda de campanya. Els grups de l'esplai que marxen d'acampada són:
                 </p>
                 <ul>
                   <li><i class="bi bi-backspace-reverse-fill"></i> Llampecs: 5è i 6è de primària.</li>
                   <li><i class="bi bi-backspace-reverse"></i> Xarxets: 1r i 2n de l'ESO.</li>
                   <li><i class="bi bi-backspace-reverse-fill"></i> Marmotes: 3r i 4t de l'ESO.</li>
+                  <li><i class="bi bi-backspace-reverse"></i> Espurnes: 1r i 2n de Batxillerat.</li>
                 </ul>
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center">
@@ -194,12 +197,13 @@
             <div class="row">
               <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
                 <h3>A l'estiu marxem de ruta!</h3>
-                <p>
-                  Els grups més grans de l'esplai a l'estiu marxen de ruta. Normalment marxen una setmana a diferents llocs d'Espanya. L'Esplai el Pas ha estat de ruta al pais basc, menorca, mallorca, pirineus, delta del ebre, etc... Els grups que marxen de ruta són:
+                <p class="justify">
+                  A l'estiu els grups de grans marxem a caminar pel món. Fem rutes per diferents paisatges portant només una motxilla a l'esquena i descobrim nous indrets amb cada passa que fem. Ens banyem a cales, caminem per boscos, pugem muntanyes i descansem totes juntes per concloure el curs i donar pas a l'estiu. Els grups que marxen de ruta són:
                 </p>
                 <ul>
                   <li><i class="bi bi-backspace-reverse"></i> Xarxets: 1r i 2n de l'ESO.</li>
                   <li><i class="bi bi-backspace-reverse-fill"></i> Marmotes: 3r i 4t de l'ESO.</li>
+                  <li><i class="bi bi-backspace-reverse"></i> Espurnes: 1r i 2n de Batxillerat.</li>
                 </ul>
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center">
@@ -227,42 +231,42 @@
             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
               <i class="bi bi-chat-dots"></i>
               <h4>Participació</h4>
-              <p>Considerem que a l’esplai es crea un espai on infants i joves poden participar, opinar i compartir des de les múltiples modalitats.</p>
+              <p class="justify">Considerem que a l’esplai es crea un espai on infants i joves poden participar, opinar i compartir des de les múltiples modalitats.</p>
             </div>
           </div>
           <div class="col-md-6 mt-4 mt-md-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
               <i class="bi bi-lightbulb"></i>
               <h4>Esperit crític</h4>
-              <p>L’esplai és un espai on aprenem a qüestionar-nos allò que ens envolta, enriquint-nos del que ens aporta per a transformar allò que no ens agrada.</p>
+              <p class="justify">L’esplai és un espai on aprenem a qüestionar-nos allò que ens envolta, enriquint-nos del que ens aporta per a transformar allò que no ens agrada.</p>
             </div>
           </div>
           <div class="col-md-6 mt-4 mt-md-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
               <i class="bi bi-emoji-smile"></i>
               <h4>Respecte i empatia</h4>
-              <p>A la fi de buscar una societat inclusiva, des de l’esplai eduquem per a la no discriminació a cap persona. Eduquem als infants i joves per rebutjar els prejudicis i mostrar respecte cap a altres cultures, opinions i persones.</p>
+              <p class="justify">A la fi de buscar una societat inclusiva, des de l’esplai eduquem per a la no discriminació a cap persona. Eduquem als infants i joves per rebutjar els prejudicis i mostrar respecte cap a altres cultures, opinions i persones.</p>
             </div>
           </div>
           <div class="col-md-6 mt-4 mt-md-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
               <i class="bi bi-activity"></i>
               <h4>Salut</h4>
-              <p>Promovem hàbits saludables en alimentació, higiene, descans i activitat física per tal de portar una vida sana. Aprofitem tots els factors que influeixen, com els aliments de temporada, el clima i l'entorn en el qual vivim.</p>
+              <p class="justify">Promovem hàbits saludables en alimentació, higiene, descans i activitat física per tal de portar una vida sana. Aprofitem tots els factors que influeixen, com els aliments de temporada, el clima i l'entorn en el qual vivim.</p>
             </div>
           </div>
           <div class="col-md-6 mt-4 mt-md-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="500">
               <i class="bi bi-gender-female"></i>
               <h4>Feminisme</h4>
-              <p>A l’esplai som conscient de la desigualtat de gènere existent a la nostra societat i és per això que lluitem per erradicar-la. </p>
+              <p class="justify">A l’esplai som conscient de la desigualtat de gènere existent a la nostra societat i és per això que lluitem per erradicar-la. </p>
             </div>
           </div>
           <div class="col-md-6 mt-4 mt-md-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="600">
               <i class="bi bi-tree"></i>
               <h4>Respecte per la natura</h4>
-              <p>La natura és un bé preuat, ens ofereix experiències úniques i podem aprendre molt d’ella.</p>
+              <p class="justify">La natura és un bé preuat, ens ofereix experiències úniques i podem aprendre molt d’ella.</p>
             </div>
           </div>
         </div>

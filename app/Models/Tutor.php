@@ -21,4 +21,8 @@ class Tutor extends Model
     {
         return $this->belongsToMany(Infant::class,'tutors_infants','tutor_id','infant_id');
     }
+
+    public function inscripcio() {
+        return $this->hasOne(Inscripcio::class,'tutor_id');
+    }
 }

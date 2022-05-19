@@ -3,7 +3,7 @@
 @section('title', 'Editar tutor')
 
 @section('css')
-    <link href="/css/tutors/tutorEdit.css" rel="stylesheet">
+<link href="{{asset('/css/tutors/tutorEdit.css')}}" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -144,9 +144,9 @@
 @endsection
 
 @section('js')
-<script src="/js/tutors/tutorEdit.js"></script>
-  <script src="/js/jquery-3.6.0.min.js"></script>
-  <script src="/js/jquery-ui.min.js"></script>
+<script src="{{asset('/js/tutors/tutorEdit.js')}}"></script>
+  <script src="{{asset('/js/jquery-3.6.0.min.js')}}"></script>
+  <script src="{{asset('/js/jquery-ui.min.js')}}"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
 
   @if (session('statusTutor') == 'ok')

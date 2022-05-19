@@ -3,7 +3,7 @@
 @section('title', 'Editar infant')
 
 @section('css')
-    <link href="/css/infants/infantEdit.css" rel="stylesheet">
+  <link href="{{asset('/css/infants/infantEdit.css')}}" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -211,5 +211,5 @@
 @endsection
 
 @section('js')
-  <script src="/js/infantEdit.js"></script> 
+<script src="{{asset('/js/infants/infantEdit.js')}}"></script> 
 @endsection

@@ -15,4 +15,9 @@ class Grup extends Model
     public function infants () {
         return $this->hasMany(Infant::class, 'grup_id');
     }
+
+    public function excursions()
+    {
+        return $this->belongsToMany(Grups::class,'excursions_grups','grup_id','excursio_id');
+    }
 }

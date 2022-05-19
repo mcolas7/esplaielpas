@@ -52,7 +52,7 @@ class InfantRequest extends FormRequest
             'codi_postal' => 'required|min:5|max:5|digits:5',
             'dni' => 'unique:persones|nullable',
             'alergies' => 'required',
-            'alergia' => ''
+            'alergia' => 'nullable'
         ];
     }
 

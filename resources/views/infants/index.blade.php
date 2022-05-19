@@ -4,8 +4,8 @@
 
 
 @section('css')
-    <link href="/css/infants/infantIndex.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/jquery-ui.min.css">
+<link href="{{asset('/css/infants/infantIndex.css')}}" rel="stylesheet">
+<link rel="stylesheet" href="{{asset('/css/jquery-ui.min.css')}}">
 
 @endsection
 
@@ -179,8 +179,8 @@
 </div>
 @endsection
 @section('js')
-  <script src="/js/jquery-3.6.0.min.js"></script>
-  <script src="/js/jquery-ui.min.js"></script>
+  <script src="{{asset('/js/jquery-3.6.0.min.js')}}"></script>
+  <script src="{{asset('/js/jquery-ui.min.js')}}"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <script>

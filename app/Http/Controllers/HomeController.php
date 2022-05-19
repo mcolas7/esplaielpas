@@ -15,7 +15,10 @@ class HomeController extends Controller
             'subject' => 'required',
             'message' => 'required'
         ], [
-            'name.required' => 'Falta el teu nom!!!'
+            'name.required' => 'El camp nom és obligatori.',
+            'email.required' => 'El camp email és obligatori.',
+            'subject.required' => 'El camp títol és obligatori.',
+            'message.required' => 'El camp missatge és obligatori.'
         ]);
 
         // dd($message);

@@ -3,7 +3,7 @@
 @section('title', 'Mostrar tutor')
 
 @section('css')
-    <link href="/css/tutors/tutorEdit.css" rel="stylesheet">
+  <link href="{{asset('/css/tutors/tutorEdit.css')}}" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -103,7 +103,7 @@
 @endsection
 
 @section('js')
-  <script src="/js/tutors/tutorCreate.js"></script>
+  <script src="{{asset('/js/tutors/tutorCreate.js')}}"></script>
 
   <script>
     $('.formulariEliminar').submit(function(e) {

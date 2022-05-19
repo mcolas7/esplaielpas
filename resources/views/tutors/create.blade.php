@@ -3,7 +3,7 @@
 @section('title', 'Inscriure tutor')
 
 @section('css')
-    <link href="/css/tutors/tutorCreate.css" rel="stylesheet">
+    <link href="{{asset('/css/tutors/tutorCreate.css')}}" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -150,9 +150,9 @@
 @endsection
 
 @section('js')
-  <script src="/js/tutors/tutorCreate.js"></script>
-  <script src="/js/jquery-3.6.0.min.js"></script>
-  <script src="/js/jquery-ui.min.js"></script>
+  <script src="{{asset('/js/tutors/tutorCreate.js')}}"></script>
+  <script src="{{asset('/js/jquery-3.6.0.min.js')}}"></script>
+  <script src="{{asset('/js/jquery-ui.min.js')}}"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
 
   @if (session('statusInfant') == 'ok')

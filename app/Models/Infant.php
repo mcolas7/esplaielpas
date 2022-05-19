@@ -33,4 +33,8 @@ class Infant extends Model
     {
         return $this->belongsToMany(Tutor::class,'tutors_infants','infant_id','tutor_id');
     }
+
+    public function inscripcio() {
+        return $this->hasOne(Inscripcio::class,'infant_id');
+    }
 }

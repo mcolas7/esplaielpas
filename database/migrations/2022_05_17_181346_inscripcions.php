@@ -22,7 +22,8 @@ class Inscripcions extends Migration
             $table->timestamps();
 
             $table->foreign('excursio_id')->references('excursio_id')->on('excursions');
-            $table->foreign('grup_id')->references('grup_id')->on('grups');
+            $table->foreign('tutor_id')->references('tutor_id')->on('tutors');
+            $table->foreign('infant_id')->references('infant_id')->on('infants');
         });
     }
 

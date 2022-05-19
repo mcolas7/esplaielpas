@@ -18,14 +18,14 @@
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Enllaços</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#hero">Inici</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="vista/nosaltresView.html">Nosaltres</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="blog.html">Blog</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ route('home') }}">Inici</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ route('nosaltres') }}">Nosaltres</a></li>
+              {{-- <li><i class="bx bx-chevron-right"></i> <a href="blog.html">Blog</a></li> --}}
               @auth
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Excursions</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="{{ route('excursions.index') }}">Excursions</a></li>
               @endauth
               @guest
-              <li><i class="bx bx-chevron-right"></i> <a href="vista/loginView.html">Iniciar Sessió</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ route('login') }}">Iniciar Sessió</a></li>
               @endguest
               
             </ul>

@@ -3,13 +3,13 @@
 @section('title', 'Iniciar Sessió')
 
 @section('css')
-    <link href="/css/style.css" rel="stylesheet">
+    <link href="{{asset('/css/style.css')}}" rel="stylesheet">
 @endsection
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <img class="mt-5 mb-0" src="/img/fliki2.png">
+                <img class="mt-5 mb-0" src="{{asset('/img/fliki2.png')}}">
             </a>
         </x-slot>
 
