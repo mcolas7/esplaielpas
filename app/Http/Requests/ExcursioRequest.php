@@ -35,8 +35,8 @@ class ExcursioRequest extends FormRequest
             'hora_fi' => 'required',
             'lat' => 'nullable',
             'long' => 'nullable',
-            'imatge' => 'required|image|size:3000', //image
-            'autoritzacio' => 'required|file|size:1000',
+            'imatge' => 'required|image', //size:3000
+            'autoritzacio' => 'required|file', //size:1000
             'descripcio' => 'required|max:2000' //min:5|max:5|digits:5
         ];
     }

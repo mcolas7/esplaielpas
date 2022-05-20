@@ -13,7 +13,7 @@
     <div class="wrapper wrapper--w790">
         <div class="card card-5">
             <div class="card-heading">
-                <h2 class="title">Crear excursió</h2>
+                <h2 class="title">Editar {{$excursio->nom}}</h2>
             </div>
             <div class="card-body">
               
@@ -49,11 +49,15 @@
 
                         <div class="col-md-6">
                             <label class="form-label">Grups que participen:</label><br>
+                            {{$excursio->grups}}
                             @forelse ($grups as $grup)
+                                {{-- @foreach ($excursio->grups as $grupsExcursio)
+                                    
+                                @endforeach
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="{{ $grup->grup_id }}" name="grups[]" value="{{ $grup->grup_id }} {{ old('$grup->grup_id') == $grup->grup_id ? 'checked' : '' }}">
+                                    <input class="form-check-input" type="checkbox" id="{{ $grup->grup_id }}" name="grups[]" value="{{ $grup->grup_id }}" {{ old('$grup->grup_id') == $grup->grup_id ? 'checked' : '' }}>
                                     <label class="form-check-label" for="{{ $grup->grup_id }}">{{ $grup->nom}}</label>
-                                </div>
+                                </div> --}}
                             @empty
                                 <p>No hi han grups!</p>
                             @endforelse
@@ -64,7 +68,7 @@
                             <select class="form-select" id="tipo_excursio_id" name="tipo_excursio_id" required>
                                 <option value="">Escollir...</option>
                                 @forelse ($tiposExcursions as $tipoExcursio)
-                                    <option value="{{ $tipoExcursio->tipo_excursio_id }}" {{old('tipo_excursio_id') == $tipoExcursio->tipo_excursio_id ? 'selected' : '' }}>{{ $tipoExcursio->nom }}</option>
+                                    <option value="{{ $tipoExcursio->tipo_excursio_id }}" {{old('tipo_excursio_id', $excursio->tipo_excursio_id) == $tipoExcursio->tipo_excursio_id ? 'selected' : '' }}>{{ $tipoExcursio->nom }}</option>
                                 @empty
                                     <option>No hi ha tipus d'excursions</option>
                                 @endforelse
@@ -101,7 +105,7 @@
                         <div class="col-md-8">
                             <label for="data_inici" class="form-label">Data de sortida</label>
                             <div class="input-group has-validation">
-                            <input type="date" class="form-control" id="data_inici" name="data_inici" value="{{ old('data_inici', $excursio->data_inici) }}" required>
+                            <input type="date" class="form-control" id="data_inici" name="data_inici" value="{{ old('data_inici', $dataInici) }}" required>
                             <div class="invalid-feedback">
                                 Cal afegir una data de sortida vàlida.
                             </div>
@@ -112,7 +116,7 @@
                         <div class="col-md-4">
                             <label for="hora_inici" class="form-label">Hora de sortida</label>
                             <div class="input-group has-validation">
-                            <input type="time" class="form-control" id="hora_inici" name="hora_inici" value="{{ old('hora_inici', $excursio->hora_inici) }}" required>
+                            <input type="time" class="form-control" id="hora_inici" name="hora_inici" value="{{ old('hora_inici', $horaInici) }}" required>
                             <div class="invalid-feedback">
                                 Cal afegir una hora de sortida vàlida.
                             </div>
@@ -123,7 +127,7 @@
                         <div class="col-md-8">
                             <label for="data_fi" class="form-label">Data d'arribada</label>
                             <div class="input-group has-validation">
-                            <input type="date" class="form-control" id="data_fi" name="data_fi" value="{{ old('data_fi', $excursio->data_fi) }}" required>
+                            <input type="date" class="form-control" id="data_fi" name="data_fi" value="{{ old('data_fi', $dataFi) }}" required>
                             <div class="invalid-feedback">
                                 Cal afegir una data d'arribada vàlida.
                             </div>
@@ -134,7 +138,7 @@
                         <div class="col-md-4">
                             <label for="hora_fi" class="form-label">Hora d'arribada</label>
                             <div class="input-group has-validation">
-                            <input type="time" class="form-control" id="hora_fi" name="hora_fi" value="{{ old('hora_fi', $excursio->hora_fi) }}" required>
+                            <input type="time" class="form-control" id="hora_fi" name="hora_fi" value="{{ old('hora_fi', $horaFi) }}" required>
                             <div class="invalid-feedback">
                                 Cal afegir una hora d'arribada vàlida.
                             </div>
@@ -163,7 +167,8 @@
                         </div>
 
                         <div class="col-sm-6">
-                            <label for="imatge" class="form-label">Imatge <span class="text-muted">(JPG, JPEG, PNG)</span></label>
+                            <img class="img-fluid" src="/storage/{{$excursio->imatge}}" alt="{{$excursio->nom}}">
+                            <label for="imatge" class="form-label pt-1">Imatge <span class="text-muted">(JPG, JPEG, PNG)</span></label>
                             <input type="file" class="form-control" id="imatge" name="imatge" value="{{ old('imatge', $excursio->imatge) }}" accept=".jpg, .jpeg, .png" required>
                             <div class="invalid-feedback">
                                 Cal afegir una imatge vàlida.
@@ -191,7 +196,7 @@
 
                         <hr class="my-4">
             
-                        <button class="w-100 btn btn-primary btn-lg" type="submit" id="submit">CREAR EXCURSIÓ</button>
+                        <button class="w-100 btn btn-primary btn-lg" type="submit" id="submit">EDITAR EXCURSIÓ</button>
                              
                     </div>
                 </form>
@@ -204,7 +209,7 @@
 @endsection
 
 @section('js')
-  <script src="{{asset('/js/excursions/excursioCreate.js')}}"></script>
+  <script src="{{asset('/js/excursions/excursioEdit.js')}}"></script>
   <script src="{{asset('/js/jquery-3.6.0.min.js')}}"></script>
   <script src="{{asset('/js/jquery-ui.min.js')}}"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> 

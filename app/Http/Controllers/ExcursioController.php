@@ -7,6 +7,7 @@ use App\Models\Grup;
 use App\Models\Excursio;
 use App\Models\TipoExcursio;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Monolog\Handler\IFTTTHandler;
 
 class ExcursioController extends Controller
@@ -29,7 +30,9 @@ class ExcursioController extends Controller
      */
     public function index()
     {
-        return view('excursions.index');
+        $excursions = Excursio::get();
+
+        return view('excursions.index', compact('excursions'));
     }
 
     /**
@@ -58,7 +61,7 @@ class ExcursioController extends Controller
      */
     public function store(ExcursioRequest $request)
     {
-    
+
 
         if (!isset($request["grups"])) {
             return redirect()->route('excursions.create')
@@ -108,11 +111,15 @@ class ExcursioController extends Controller
             }
         }
 
-        $imatge = $request->file('imatge');
-        $imatge->store('public');
+        $imatge = $request->file('imatge')->store('public');
+        $imatgeRuta = explode('/', $imatge);
+        $imatgeNom = $imatgeRuta[1];
 
-        $autoritzacio = $request->file('autoritzacio');
-        $autoritzacio->store('public');
+        $autoritzacio = $request->file('autoritzacio')->store('public');
+        $autoritzacioRuta = explode('/', $autoritzacio);
+        $autoritzacioNom = $autoritzacioRuta[1];
+
+    
 
         $excursio = Excursio::create([
             'tipo_excursio_id' => $request->tipo_excursio_id,
@@ -122,8 +129,8 @@ class ExcursioController extends Controller
             'data_inici' => $request->data_inici . " " . $request->hora_inici,
             'data_fi' => $request->data_fi . " " . $request->hora_fi,
             'localitzacio' => $request->localitzacio,
-            'imatge' => $imatge->getClientOriginalName(),
-            'autoritzacio' => $autoritzacio->getClientOriginalName(),
+            'imatge' => $imatgeNom,
+            'autoritzacio' => $autoritzacioNom,
             'lat' => $request->lat,
             'long' => $request->long
         ]);
@@ -147,12 +154,32 @@ class ExcursioController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Excursio $excursio)
     {
-        //
+        $dataIniciBD = explode(' ',$excursio->data_inici);
+        $dataIniciArray = explode('-',$dataIniciBD[0]);
+        $dataInici = $dataIniciArray[2] . '/' . $dataIniciArray[1] . "/" . $dataIniciArray[0];
+
+        $horaIniciArray = explode(':',$dataIniciBD[1]);;
+        $horaInici = $horaIniciArray[0] . ':' . $horaIniciArray[1];
+
+        $dataFiBD = explode(' ',$excursio->data_fi);
+        $dataFiArray = explode('-',$dataFiBD[0]);
+        $dataFi = $dataFiArray[2] . '/' . $dataFiArray[1] . "/" . $dataFiArray[0];
+
+        $horaFiArray = explode(':',$dataFiBD[1]);;
+        $horaFi = $horaFiArray[0] . ':' . $horaFiArray[1];
+
+        return view('excursions.show', [
+            'excursio' => $excursio,
+            'dataInici' => $dataInici,
+            'horaInici' => $horaInici,
+            'dataFi' => $dataFi,
+            'horaFi' => $horaFi
+        ]);
     }
 
     /**
@@ -161,9 +188,28 @@ class ExcursioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Excursio $excursio)
     {
-        //
+        $dataIniciBD = explode(' ',$excursio->data_inici);
+        $dataInici = $dataIniciBD[0];
+        $horaInici = $dataIniciBD[1];
+
+        $dataFiBD = explode(' ',$excursio->data_fi);
+        $dataFi = $dataFiBD[0];
+        $horaFi = $dataFiBD[1];
+
+        $grups = Grup::get();
+        $tiposExcursions = TipoExcursio::get();
+
+        return view('excursions.edit', [
+            'excursio' => $excursio,
+            'tiposExcursions' => $tiposExcursions,
+            'grups' => $grups,
+            'dataInici' => $dataInici,
+            'horaInici' => $horaInici,
+            'dataFi' => $dataFi,
+            'horaFi' => $horaFi
+        ]);
     }
 
     /**

@@ -53,16 +53,16 @@ Route::get('/tutor/{persona}', [TutorController::class,'show'])->name('tutors.sh
 
 Route::delete('/tutor/{persona}', [TutorController::class,'destroy'])->name('tutors.destroy');
 
-Route::get('/excursio', [ExcursioController::class,'index'])->name('excursions.index');
-Route::get('/excursio/crear', [ExcursioController::class,'create'])->name('excursions.create'); // Route::get('/tutor/{persona}/crear', [TutorController::class,'create'])->name('tutors.create');
+Route::get('/excursions', [ExcursioController::class,'index'])->name('excursions.index');
+Route::get('/excursions/crear', [ExcursioController::class,'create'])->name('excursions.create'); // Route::get('/tutor/{persona}/crear', [TutorController::class,'create'])->name('tutors.create');
 
-Route::get('/excursio/{excursio}/editar', [ExcursioController::class,'edit'])->name('excursions.edit');
-Route::patch('/excursio/{excursio}', [ExcursioController::class,'update'])->name('excursions.update'); // Per actualitzar un formulari
+Route::get('/excursions/{excursio}/editar', [ExcursioController::class,'edit'])->name('excursions.edit');
+Route::patch('/excursions/{excursio}', [ExcursioController::class,'update'])->name('excursions.update'); // Per actualitzar un formulari
 
-Route::post('/excursio', [ExcursioController::class,'store'])->name('excursions.store');  //Route::post('/tutor', [TutorController::class,'store'])->name('tutors.store');
-Route::get('/excursio/{excursio}', [ExcursioController::class,'show'])->name('excursions.show'); // MOLT IMPORTANT QUE AQUESTA RUTA SEMPRE SIGUI LA ULTIMA
+Route::post('/excursions', [ExcursioController::class,'store'])->name('excursions.store');  //Route::post('/tutor', [TutorController::class,'store'])->name('tutors.store');
+Route::get('/excursions/{excursio}', [ExcursioController::class,'show'])->name('excursions.show'); // MOLT IMPORTANT QUE AQUESTA RUTA SEMPRE SIGUI LA ULTIMA
 
-Route::delete('/excursio/{excursio}', [ExcursioController::class,'destroy'])->name('excursions.destroy');
+Route::delete('/excursions/{excursio}', [ExcursioController::class,'destroy'])->name('excursions.destroy');
 
 // AQUESTES 7 RUTES ES PODEN SIMPLIFICAR AMB
 
