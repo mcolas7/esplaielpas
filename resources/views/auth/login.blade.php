@@ -7,9 +7,9 @@
 @endsection
 <x-guest-layout>
     <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <img class="mt-5 mb-0" src="{{asset('/img/fliki2.png')}}">
+        <x-slot name="logo" class="mt-5">
+            <a href="{{route('home')}}">
+                <img class="mt-5 mb-0 pb-0" src="{{asset('/img/fliki2.png')}}" style="margin-top: 200px">
             </a>
         </x-slot>
 

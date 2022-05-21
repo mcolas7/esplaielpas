@@ -54,6 +54,9 @@ Route::get('/tutor/{persona}', [TutorController::class,'show'])->name('tutors.sh
 Route::delete('/tutor/{persona}', [TutorController::class,'destroy'])->name('tutors.destroy');
 
 Route::get('/excursions', [ExcursioController::class,'index'])->name('excursions.index');
+
+Route::get('/search/excursio', [ExcursioController::class,'excursions'])->name('excursions.search');
+
 Route::get('/excursions/crear', [ExcursioController::class,'create'])->name('excursions.create'); // Route::get('/tutor/{persona}/crear', [TutorController::class,'create'])->name('tutors.create');
 
 Route::get('/excursions/{excursio}/editar', [ExcursioController::class,'edit'])->name('excursions.edit');

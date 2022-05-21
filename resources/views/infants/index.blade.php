@@ -5,7 +5,7 @@
 
 @section('css')
 <link href="{{asset('/css/infants/infantIndex.css')}}" rel="stylesheet">
-<link rel="stylesheet" href="{{asset('/css/jquery-ui.min.css')}}">
+<link href="{{asset('/css/jquery-ui.min.css')}}" rel="stylesheet">
 
 @endsection
 
@@ -21,10 +21,10 @@
           <div class="col-md-6">
             <form action="{{ route('infants.index') }}" class="form-inline" method="GET">
               <div class="input-group">
-                <span class="input-group-text"><i class="bi bi-search"></i></span>
-                <input type="text" class="form-control mr-sm-2" id="search" name="search" placeholder="Escriu nom i cognoms de l'infant">
+                <span class="input-group-text"><i class="bi bi-search" style="color: #6730b0;"></i></span>
+                <input type="text" class="form-control mr-sm-2" id="search" name="search" placeholder="Escriu nom i cognoms de l'infant" maxlength="40">
                 <div class="input-group-append w-50">
-                  <button class="btn btn-danger my-2 my-sm-0" type="submit" style="background:#6730b0; border: 2px solid #6730b0;">BUSCAR</button>
+                  <button class="btn btn-danger my-2 my-sm-0 ms-1" type="submit" style="background:#6730b0; border: 2px solid #6730b0;">BUSCAR</button>
                 </div>
               </div>
             </form>

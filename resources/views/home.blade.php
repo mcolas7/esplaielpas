@@ -3,7 +3,7 @@
 @section('title', 'Esplai el Pas')
 
 @section('css')
-    <link href="/css/style.css" rel="stylesheet">
+  <link href="{{asset('/css/style.css')}}" rel="stylesheet">
 @endsection
     
 @section('content')
@@ -51,7 +51,7 @@
             </div>
           </div>
           <div class="col-xl-7 d-flex align-content-center mt-5 pt-5">
-            <img class="img-fluid" src="/img/monitors3.jpg" class="img-fluid">
+            <img class="img-fluid" src="{{asset('/img/monitors3.jpg')}}" class="img-fluid">
           </div>
         </div>
       </div>
@@ -149,7 +149,7 @@
                 </ul>
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="200">
-                <img src="/img/dissabtes.jpg" alt="" class="img-fluid">
+                <img src="{{asset('/img/dissabtes.jpg')}}" alt="" class="img-fluid">
               </div>
             </div>
           </div>
@@ -170,7 +170,7 @@
                 </ul>
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="/img/colonies.jpg" alt="" class="img-fluid">
+                <img src="{{asset('/img/colonies.jpg')}}" alt="" class="img-fluid">
               </div>
             </div>
           </div>
@@ -189,7 +189,7 @@
                 </ul>
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="/img/acampada2.jpg" alt="" class="img-fluid">
+                <img src="{{asset('/img/acampada2.jpg')}}" alt="" class="img-fluid">
               </div>
             </div>
           </div>
@@ -207,7 +207,7 @@
                 </ul>
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="/img/ruta.jpg" alt="" class="img-fluid">
+                <img src="{{asset('/img/ruta.jpg')}}" alt="" class="img-fluid">
               </div>
             </div>
           </div>
@@ -365,6 +365,6 @@
 
 @section('js')
 
-  <script src="/js/main.js"></script>
+  <script src="{{asset('/js/main.js')}}"></script>
   
 @endsection

@@ -22,7 +22,7 @@ function init() {
     data_fi.removeAttribute("min");
     data_fi.setAttribute("min", data_inici.value);
 
-    if (data_inici.value == donarFormatData(avui)) {
+    if (data_inici.value === donarFormatData(avui)) {
       hora_inici.setAttribute("min", donarFormatHora(avui));
       hora_fi.setAttribute("min", donarFormatHora(avui));
 
@@ -35,6 +35,8 @@ function init() {
   hora_inici.addEventListener('change', calcularHoraArribada);
 
   data_fi.addEventListener('change', calcularHoraArribada);
+
+  hora_fi.addEventListener('change', calcularHoraArribada);
   
 }
 

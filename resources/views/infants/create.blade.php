@@ -110,7 +110,7 @@
                             @forelse ($grups as $grup)
                                 <option value="{{ $grup->grup_id }}" {{old('grup') == $grup->grup_id ? 'selected' : '' }}>{{ $grup->nom }}</option>
                             @empty
-                                <option>No hi ha poblacions</option>
+                                <option>No hi ha grups!</option>
                             @endforelse
                           </select>
                           <div class="invalid-feedback">

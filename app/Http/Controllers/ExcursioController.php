@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ExcursioRequest;
 use App\Models\Grup;
 use App\Models\Excursio;
 use App\Models\TipoExcursio;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use Monolog\Handler\IFTTTHandler;
+use App\Http\Requests\ExcursioRequest;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\ExcursioEditRequest;
 
 class ExcursioController extends Controller
 {
@@ -28,11 +29,67 @@ class ExcursioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $excursions = Excursio::get();
+        
+        $grups = Grup::get();
+        $tiposExcursions = TipoExcursio::get();
 
-        return view('excursions.index', compact('excursions'));
+
+        // $dataActual = date('Y-m-d');
+        // $dataActualArray = explode("-", $dataActual);
+        // $anyActual = $dataActualArray[0];
+        // $mesActual = $dataActualArray[1];
+        // $diaActual = $dataActualArray[2];
+
+        
+        if ($request->search == '' && $request->grup == NULL && $request->tipoExcursio == NULL) {
+
+            $excursions = Excursio::get();
+
+            // $excursions = Excursio::whereDate('created_at','>',date('Y-m-d'));
+
+            return view('excursions.index', [
+                'excursions' => $excursions,
+                'grups' => $grups,
+                'tiposExcursions' => $tiposExcursions
+            ]);
+
+        } else {
+
+            $nom = $request->get('search');
+            $grup = $request->get('grup');
+            $tipoExcursio = $request->get('tipoExcursio');
+
+            $excursions = Excursio::orderBy('excursions.excursio_id', 'DESC')
+                ->nom($nom)
+                ->excursio($tipoExcursio)
+                ->excursiogrups($grup)
+                ->get();
+
+
+            return view('excursions.index', [
+                'excursions' => $excursions,
+                'grups' => $grups,
+                'tiposExcursions' => $tiposExcursions
+            ]);
+
+        }    
+    }
+
+    public function excursions(Request $request) {
+       
+        $querys = Excursio::where('nom', 'LIKE', '%'. $request->term . "%")->get();
+
+        $data = [];
+
+        foreach ($querys as $query) {
+            $data[] = [
+                'label' => $query->nom
+            ];
+        }
+
+        return $data;
     }
 
     /**
@@ -65,7 +122,7 @@ class ExcursioController extends Controller
 
         if (!isset($request["grups"])) {
             return redirect()->route('excursions.create')
-                ->with(['errorsExcursio' => "La hora d'arribada no pot ser inferior a la hora de sortida!",
+                ->with(['errorsExcursio' => "No has seleccionat cap grup perquè vagi d'excursió!",
                         'nom' => $request->nom,
                         'localitzacio' => $request->localitzacio,
                         'preu' => $request->preu,
@@ -200,6 +257,11 @@ class ExcursioController extends Controller
 
         $grups = Grup::get();
         $tiposExcursions = TipoExcursio::get();
+        $grupsExcursio = [];
+
+        foreach ($excursio->grups as $grupExcursio) {
+            $grupsExcursio[] = $grupExcursio->grup_id;
+        }
 
         return view('excursions.edit', [
             'excursio' => $excursio,
@@ -208,7 +270,8 @@ class ExcursioController extends Controller
             'dataInici' => $dataInici,
             'horaInici' => $horaInici,
             'dataFi' => $dataFi,
-            'horaFi' => $horaFi
+            'horaFi' => $horaFi,
+            'grupsExcursio' => $grupsExcursio
         ]);
     }
 
@@ -219,9 +282,98 @@ class ExcursioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Excursio $excursio, ExcursioEditRequest $request)
     {
-        //
+        if (!isset($request["grups"])) {
+            return redirect()->route('excursions.edit', $excursio)
+                ->with(['errorsExcursio' => "No has seleccionat cap grup perquè vagi d'excursió!",
+                        'nom' => $request->nom,
+                        'localitzacio' => $request->localitzacio,
+                        'preu' => $request->preu,
+                        'lat' => $request->lat,
+                        'long' => $request->long,
+                        'descripcio' => $request->descripcio]);
+        }
+
+        if ($request->data_inici == $request->data_fi) {
+
+            $horaIniciFormulari = explode(':',$request->hora_inici);
+            $horaInici = $horaIniciFormulari[0];
+            $minutsInici = $horaIniciFormulari[1];
+
+            $horaFiFormulari = explode(':',$request->hora_fi);
+            $horaFi = $horaFiFormulari[0];
+            $minutsFi = $horaFiFormulari[1];
+
+            
+            if ($horaInici > $horaFi) {
+
+                return redirect()->route('excursions.edit', $excursio)
+                    ->with(['errorsExcursio' => "La hora d'arribada no pot ser inferior a la hora de sortida!",
+                            'nom' => $request->nom,
+                            'localitzacio' => $request->localitzacio,
+                            'preu' => $request->preu,
+                            'lat' => $request->lat,
+                            'long' => $request->long,
+                            'descripcio' => $request->descripcio]);
+            }
+
+            if ($horaInici == $horaFi) {
+                if ($minutsInici > $minutsFi) {
+                    return redirect()->route('excursions.edit', $excursio)
+                        ->with(['errorsExcursio' => "La hora d'arribada no pot ser inferior a la hora de sortida!",
+                                'nom' => $request->nom,
+                                'localitzacio' => $request->localitzacio,
+                                'preu' => $request->preu,
+                                'lat' => $request->lat,
+                                'long' => $request->long,
+                                'descripcio' => $request->descripcio]);
+                }
+            }
+        }
+
+        if ($request->hasFile('imatge')) {
+            Storage::delete('public/'.$excursio->imatge);
+
+            $imatge = $request->file('imatge')->store('public');
+            $imatgeRuta = explode('/', $imatge);
+            $imatgeNom = $imatgeRuta[1];
+            $excursio->imatge = $imatgeNom;
+        }
+        
+        if ($request->hasFile('autoritzacio')) {
+            Storage::delete('public/'.$excursio->autoritzacio);
+
+            $autoritzacio = $request->file('autoritzacio')->store('public');
+            $autoritzacioRuta = explode('/', $autoritzacio);
+            $autoritzacioNom = $autoritzacioRuta[1];
+            $excursio->autoritzacio = $autoritzacioNom;
+        }    
+
+
+        $excursio->tipo_excursio_id = $request->tipo_excursio_id;
+        $excursio->nom = $request->nom;
+        $excursio->preu = $request->preu;
+        $excursio->descripcio = $request->descripcio;
+        $excursio->data_inici = $request->data_inici . " " . $request->hora_inici;
+        $excursio->data_fi = $request->data_fi . " " . $request->hora_fi;
+        $excursio->localitzacio = $request->localitzacio;
+        $excursio->lat = $request->lat;
+        $excursio->long = $request->long;
+        $excursio->save();
+
+        $grupsExcursio = [];
+
+        foreach ($request->grups as $grup_id) {
+            $grupsExcursio[] = $grup_id;
+        }
+
+      
+        $excursio->grups()->sync($grupsExcursio);
+           
+
+
+        return redirect()->route('excursions.index')->with('status', 'Excursió actualitzada amb èxit.');
     }
 
     /**
@@ -230,8 +382,14 @@ class ExcursioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Excursio $excursio)
     {
-        //
+        Storage::delete('public/'.$excursio->imatge);
+        Storage::delete('public/'.$excursio->autoritzacio);
+
+        $excursio->grups()->detach();
+        $excursio->delete();
+
+        return redirect()->route('excursions.index')->with('status','Excursió eliminada amb èxit.');
     }
 }

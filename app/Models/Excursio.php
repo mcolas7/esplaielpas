@@ -26,4 +26,26 @@ class Excursio extends Model
         return $this->hasOne(Inscripcio::class,'excursio_id');
     }
 
+    //Scope
+
+    public function scopeNom ($query, $nom)
+    {
+        if ($nom) 
+            return $query->where('nom', 'LIKE', "%$nom%");
+    
+    }
+
+    public function scopeExcursio ($query, $tipoExcursio)
+    {
+        if ($tipoExcursio) 
+            return $query->where('tipo_excursio_id', $tipoExcursio);
+    
+    }
+
+    public function scopeExcursiogrups ($query, $grup_id) {
+
+        if ($grup_id)
+            return $query->join('excursions_grups as eg','excursions.excursio_id','=','eg.excursio_id')->where('eg.grup_id', $grup_id);
+    }
+
 }

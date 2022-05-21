@@ -14,7 +14,7 @@
           <li class="nav-item"><a href="{{ route('nosaltres') }}" class="nav-link {{ request()->routeIs('nosaltres') ? 'active' : '' }}">NOSALTRES</a></li>
           {{-- <li class="nav-item"><a href="{{ route('blog') }}" class="nav-link {{ request()->routeIs('blog') ? 'active' : ''}}">BLOG</a></li> --}}
           @auth
-            <li class="nav-item"><a href="{{ route('excursions.index') }}" class="nav-link {{ request()->routeIs('excursions') ? 'active' : ''}}">EXCURSIONS</a></li>
+            <li class="nav-item"><a href="{{ route('excursions.index') }}" class="nav-link {{ request()->routeIs('excursions.index') ? 'active' : ''}}">EXCURSIONS</a></li>
             <li class="nav-item"><a href="{{ route('infants.index') }}" class="nav-link {{ request()->routeIs('infants.index') ? 'active' : ''}}">INFANTS</a></li>
           @endauth
         </ul>

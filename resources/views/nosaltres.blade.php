@@ -3,7 +3,7 @@
 @section('title', 'Nosaltres')
 
 @section('css')
-  <link href="/css/nosaltress.css" rel="stylesheet">
+  <link href="{{asset('/css/nosaltress.css')}}" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -17,13 +17,13 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="/img/nosaltres/colonies3.jpg" class="d-block w-100" alt="...">
+          <img src="{{asset('/img/nosaltres/colonies3.jpg')}}" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-          <img src="/img/nosaltres/esplai3.jpg" class="d-block w-100" alt="...">
+          <img src="{{asset('/img/nosaltres/esplai3.jpg')}}" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-          <img src="/img/nosaltres/acampada.jpg" class="d-block w-100" alt="...">
+          <img src="{{asset('/img/nosaltres/acampada.jpg')}}" class="d-block w-100" alt="...">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -48,7 +48,7 @@
 
         <div class="row">
           <div class="col-lg-4">
-            <img src="/img/nosaltres.jpg" class="img-fluid" alt="">
+            <img src="{{asset('/img/nosaltres.jpg')}}" class="img-fluid" alt="">
           </div>
           <div class="col-lg-8 pt-4 pt-lg-0 content">
             <h3>Història</h3>
@@ -71,7 +71,7 @@
 
         <div class="section-title-foulard">
           <h2>Llobatons</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>Nosaltres som els més petits de l’Esplai el Pas: fem 1r i 2n de primària! A l’Esplai aprenem mitjançant el joc i això ens permet créixer i aprendre valors d’una manera molt diferent a la que estem acostumats. Fixa’t quins monitors i monitores que tenim!</p>
         </div>
 
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
@@ -79,11 +79,11 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/monitores/helena.jpg" class="testimonial-img" alt="">
+                <img src="{{asset('/img/monitores/helena.jpg')}}" class="testimonial-img" alt="">
                 <h3>Helena Nualart</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                  Bones! Sóc l’Helena, monitora de Llobatons/es. M’agrada llegir al solet, escriure i la música. Ah… i passar els dissabte a la tarda amb la gent bonica de l’Esplai
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -91,11 +91,11 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                <img src="{{asset('/img/monitores/polGuerra.jpg')}}" class="testimonial-img" alt="">
                 <h3>Pol Guerra</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                  Sóc monitor de l'esplai perquè com a infant vaig aprendre uns valors que crec que són fonamentals i ara sóc jo el qui vol transmetre aquests valors
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -103,11 +103,11 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/monitores/claudiaValles3.jpg" class="testimonial-img" alt="">
+                <img src="{{asset('/img/monitores/claudiaValles3.jpg')}}" class="testimonial-img" alt="">
                 <h3>Clàudia Valles</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                  Soc la Clàudia tinc 20 anys i soc monitora de l'esplai el pas des de fa 3 anys. Estudio educació infantil i primària i, en un futur, vull ser mestra. En el meu temps lliure m'agrada llegir, la música i la dansa
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -115,11 +115,11 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                <img src="{{asset('/img/monitores/nora.jpg')}}" class="testimonial-img" alt="">
                 <h3>Nora</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                  M'agrada tant la naturalesa i els animals que estudio Biologia. M'agrada molt passar el meu temps lliure amb els meus amics, sempre anem de ruta o fem acampada, és molt divertit
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -138,7 +138,7 @@
 
         <div class="section-title">
           <h2>Xiruques</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>Nosaltres som les xiruques: fem 3r i 4t de primària! A l’Esplai comencem a ser conscients del nostre entorn i de nosaltres mateixes. Com bé indica el nostre nom, amb les xiruques posades cada dissabte fem passes de gegants! Fixa’t quins monitors i monitores que tenim!</p>
         </div>
 
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
@@ -146,11 +146,11 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/monitores/ivan.jpeg" class="testimonial-img" alt="">
+                <img src="{{asset('/img/monitores/ivan.jpeg')}}" class="testimonial-img" alt="">
                 <h3>Ivan Martinez</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                  M’agrada molt ensenyar els meus valors i del esplai d’una manera divertida. M’agrada molt la natura i els animals!
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -158,7 +158,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/monitores/elisenda.jpg" class="testimonial-img" alt="">
+                <img src="{{asset('/img/monitores/elisenda.jpg')}}" class="testimonial-img" alt="">
                 <h3>Elisenda de la Iglesia</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
@@ -170,7 +170,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/monitores/marEscudero.jpg" class="testimonial-img" alt="">
+                <img src="{{asset('/img/monitores/marEscudero.jpg')}}" class="testimonial-img" alt="">
                 <h3>Mar Escudero</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
@@ -182,7 +182,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/monitores/nil.jpeg" class="testimonial-img" alt="">
+                <img src="{{asset('/img/monitores/nil.jpeg')}}" class="testimonial-img" alt="">
                 <h3>Nil Bayarri</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
@@ -194,7 +194,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                <img src="{{asset('/img/monitores/sandraVela.jpg')}}" class="testimonial-img" alt="">
                 <h3>Sandra Vela</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
@@ -217,7 +217,7 @@
 
         <div class="section-title-foulard">
           <h2>Llampecs</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>Nosaltres som els llampecs: fem 5è i 6è de primària! Els jocs que fem a l’Esplai són més complexos i diversos. A més, comencem a fer dinàmiques que ens permeten desenvolupar l’esperit crític! Fixa’t quins monitors i monitores que tenim!</p>
         </div>
 
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
@@ -225,11 +225,11 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/monitores/marta.jpeg" class="testimonial-img" alt="">
+                <img src="{{asset('/img/monitores/marta.jpeg')}}" class="testimonial-img" alt="">
                 <h3>Marta Fontseca</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                  Estudio biologia i m'apassiona la natura. M'agrada explicar històries, llegir llibres i compartir les estones amb qui em fa riure
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -237,11 +237,11 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/monitores/eudald.jpg" class="testimonial-img" alt="">
+                <img src="{{asset('/img/monitores/eudald.jpg')}}" class="testimonial-img" alt="">
                 <h3>Eudald Nualart</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                  Em dic Eudald Nualart, tinc 20 anys i actualment estic estudiant un Cicle Superior de Mecatrònica Industrial. Durant el meu temps lliure m'agrada fer esport, estar amb la família i amb els amics i escoltar música entre altres
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -249,7 +249,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/monitores/juliaSoler.jpg" class="testimonial-img" alt="">
+                <img src="{{asset('/img/monitores/juliaSoler.jpg')}}" class="testimonial-img" alt="">
                 <h3>Júlia Soler</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
@@ -261,11 +261,11 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                <img src="{{asset('img/monitores/pauRibes.jpg')}}" class="testimonial-img" alt="">
                 <h3>Pau Ribas</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                  Sóc en Pau Ribas Silva, sóc monitor de l’Esplai el Pas del grup de Llampecs i en el meu temps lliure m’encanta tocar la bateria!
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -284,7 +284,7 @@
 
         <div class="section-title">
           <h2>Xarxets</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>Nosaltres som els xarxets: fem 1r i 2n d’ESO! L’Esplai ens ajuda a desenvolupar la nostra persona i, a més, ens mostra que un món millor és possible. Som conscients que nosaltres som el futur i que som aquí per actuar. Fixa’t quins monitors i monitores que tenim!</p>
         </div>
 
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
@@ -292,11 +292,11 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/monitores/comino.jpg" class="testimonial-img" alt="">
+                <img src="{{asset('/img/monitores/victor.jpg')}}" class="testimonial-img" alt="">
                 <h3>Víctor Comino</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Hola, sóc en Víctor, un noi de Palafolls de tota la vida a qui li apasiona la música i l'escalada.
+                    Hola, sóc en Víctor, un noi de Palafolls de tota la vida a qui li apasiona la música i l'escalada
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -304,11 +304,11 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/monitores/juliaRibes.jpg" class="testimonial-img" alt="">
+                <img src="{{asset('/img/monitores/juliaRibes.jpg')}}" class="testimonial-img" alt="">
                 <h3>Júlia Ribas</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                  L’esplai ha format sempre part de la meva vida. Ara com a monitora vull educar en tots els valors que a mi m’han transmès des de l’esplai i  seguir-nos divertint com sempre ho hem fet: envoltats d’amics i amigues i de natura!
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -316,11 +316,11 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                <img src="{{asset('/img/monitores/ines.jpg')}}" class="testimonial-img" alt="">
                 <h3>Inés Mendez</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                  Soc riallera i alegre. M'agrada llegir, fer esport i la música. Quan estic envoltada de bosc em sento lliure!
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -339,7 +339,7 @@
 
         <div class="section-title-foulard">
           <h2>Marmotes</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>Nosaltres som les marmotes: fem 3r i 4t d’ESO! L’Esplai ens ensenya que la diversitat sempre és positiva i que la nostra societat és millor si tots som tal i com volem ser. A més, treballem valors i coneixements que ens ajuden a enfocar el nostre futur. Fixa’t quins monitors i monitores que tenim!</p>
         </div>
 
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
@@ -347,7 +347,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/monitores/nicole.jpeg" class="testimonial-img" alt="">
+                <img src="{{asset('/img/monitores/nicole.jpg')}}" class="testimonial-img" alt="">
                 <h3>Nicole Castillejo</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
@@ -359,11 +359,11 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/monitores/xenia.jpg" class="testimonial-img" alt="">
+                <img src="{{asset('/img/monitores/xenia.jpg')}}" class="testimonial-img" alt="">
                 <h3>Xènia Freixa</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                  Em dic Xènia i sóc una persona molt tranquil·la, organitzada i riallera! M'encanta llegir, mirar fotos i fer pastissos, i sóc massa feliç quan surt el sol!
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -371,7 +371,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/monitores/laia.jpg" class="testimonial-img" alt="">
+                <img src="{{asset('/img/monitores/laia.jpg')}}" class="testimonial-img" alt="">
                 <h3>Laia Roura</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
@@ -383,11 +383,11 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/monitores/maria.jpg" class="testimonial-img" alt="">
+                <img src="{{asset('/img/monitores/maria.jpg')}}" class="testimonial-img" alt="">
                 <h3>Maria Carrasco</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                  Em dic Maria, sóc monitora de marmotes, i entre altres coses, m'agrada jugar a jocs de taula i tastar diferents formatges!
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -406,7 +406,7 @@
 
         <div class="section-title">
           <h2>Espurnes</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>Nosaltres som les espurnes, som les més grans de l’Esplai: fem 1r i 2n de Batxillerat! L’Esplai ens ensenya que no només ens hem de conèixer a nosaltres mateixes, sinó que formem part d’una societat que ens necessita. Som el futur! Fixa’t quins monitors i monitores que tenim!</p>
         </div>
 
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
@@ -414,7 +414,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/monitores/alvaro.jpg" class="testimonial-img" alt="">
+                <img src="{{asset('/img/monitores/alvaroArador.jpg')}}" class="testimonial-img" alt="">
                 <h3>Álvaro Arador</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
@@ -426,7 +426,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/monitores/pauJ2.jpg" class="testimonial-img" alt="">
+                <img src="{{asset('/img/monitores/pauJambou.jpg')}}" class="testimonial-img" alt="">
                 <h3>Pau Jambou</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
@@ -438,11 +438,11 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/monitores/iker.jpg" class="testimonial-img" alt="">
+                <img src="{{asset('/img/monitores/iker.jpg')}}" class="testimonial-img" alt="">
                 <h3>Iker Guerrero</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                  Sóc monitor desde fa 4 anys , vaig començar en el grup de marmotes i vaig descobrir que el medi natural m’agradava molt , tant la platja com la montanya, en els meus ratos lliures si no estic sobre una moto estic en algun lloc perdut , sempre el meu pla ha sigut que no tinc pla
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -450,11 +450,11 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/img/monitores/dani2.jpg" class="testimonial-img" alt="">
+                <img src="{{asset('/img/monitores/dani2.jpg')}}" class="testimonial-img" alt="">
                 <h3>Dani</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                  Hola em dic Dani i sóc un noi amb molta energia, que li encanta la natura i el senderisme
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -477,5 +477,5 @@
 @endsection
 
 @section('js')
-  <script src="/js/nosaltress.js"></script>
+  <script src="{{asset('/js/nosaltress.js')}}"></script>  
 @endsection

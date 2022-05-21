@@ -33,14 +33,15 @@
                     </div>
                 @endif
 
-                <form method="POST" action="{{ route('excursions.store') }}" class="needs-validation mt-2" id="formulariExcursio" enctype="multipart/form-data" novalidate>
+                <form method="POST" action="{{ route('excursions.update', $excursio) }}" class="needs-validation mt-2" id="formulariExcursio" enctype="multipart/form-data" novalidate>
                     @csrf
+                    @method('PATCH')
 
                     <div class="row g-3">
 
                         <div class="col-md-12">
                             <label for="nom" class="form-label">Nom</label>
-                            <input type="text" class="form-control" id="nom" name="nom" placeholder="Escriu el nom de l'excursió" value="{{session()->has('nom') ? session()->get('nom') : old('nom', $excursio->nom) }}" maxlength="20" required>
+                            <input type="text" class="form-control" id="nom" name="nom" placeholder="Escriu el nom de l'excursió" value="{{session()->has('nom') ? session()->get('nom') : old('nom', $excursio->nom) }}" maxlength="15" required>
                             <div class="invalid-feedback">
                               Cal afegir un nom vàlid.
                             </div>
@@ -49,15 +50,19 @@
 
                         <div class="col-md-6">
                             <label class="form-label">Grups que participen:</label><br>
-                            {{$excursio->grups}}
                             @forelse ($grups as $grup)
-                                {{-- @foreach ($excursio->grups as $grupsExcursio)
-                                    
-                                @endforeach
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="{{ $grup->grup_id }}" name="grups[]" value="{{ $grup->grup_id }}" {{ old('$grup->grup_id') == $grup->grup_id ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="{{ $grup->grup_id }}">{{ $grup->nom}}</label>
-                                </div> --}}
+                                @if (in_array($grup->grup_id, $grupsExcursio))
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="{{ $grup->grup_id }}" name="grups[]" value="{{ $grup->grup_id }}" {{ old('$grup->grup_id') == $grup->grup_id ? 'checked' : '' }} checked>
+                                        <label class="form-check-label" for="{{ $grup->grup_id }}">{{ $grup->nom}}</label>
+                                    </div>
+                                @else
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="{{ $grup->grup_id }}" name="grups[]" value="{{ $grup->grup_id }}" {{ old('$grup->grup_id') == $grup->grup_id ? 'checked' : '' }}>
+                                        <label class="form-check-label" for="{{ $grup->grup_id }}">{{ $grup->nom}}</label>
+                                    </div>
+                                @endif
+                                
                             @empty
                                 <p>No hi han grups!</p>
                             @endforelse
@@ -167,9 +172,9 @@
                         </div>
 
                         <div class="col-sm-6">
-                            <img class="img-fluid" src="/storage/{{$excursio->imatge}}" alt="{{$excursio->nom}}">
                             <label for="imatge" class="form-label pt-1">Imatge <span class="text-muted">(JPG, JPEG, PNG)</span></label>
-                            <input type="file" class="form-control" id="imatge" name="imatge" value="{{ old('imatge', $excursio->imatge) }}" accept=".jpg, .jpeg, .png" required>
+                            <img class="img-fluid" src="/storage/{{$excursio->imatge}}" alt="{{$excursio->nom}}">
+                            <input type="file" class="form-control mt-2" id="imatge" name="imatge" value="{{ old('imatge', $excursio->imatge) }}" accept=".jpg, .jpeg, .png">
                             <div class="invalid-feedback">
                                 Cal afegir una imatge vàlida.
                             </div>
@@ -178,7 +183,9 @@
 
                         <div class="col-sm-6">
                             <label for="autoritzacio" class="form-label">Autorització <span class="text-muted">(PDF)</span></label>
-                            <input type="file" class="form-control" id="autoritzacio" name="autoritzacio" value="{{ old('autoritzacio', $excursio->autoritzacio) }}" accept=".pdf" required>
+                            <a href="/storage/{{$excursio->autoritzacio}}" target="_blank"><img class="img-fluid" src="{{asset('/img/pdf.png')}}"></a>
+                            <p class="mt-1" style="text-align:center;">Autorització</p>
+                            <input type="file" class="form-control  mt-2" id="autoritzacio" name="autoritzacio" value="{{ old('autoritzacio', $excursio->autoritzacio) }}" accept=".pdf">
                             <div class="invalid-feedback">
                                 Cal afegir una autorització vàlida.
                             </div>

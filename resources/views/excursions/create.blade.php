@@ -40,7 +40,7 @@
 
                         <div class="col-md-12">
                             <label for="nom" class="form-label">Nom</label>
-                            <input type="text" class="form-control" id="nom" name="nom" placeholder="Escriu el nom de l'excursió" value="{{session()->has('nom') ? session()->get('nom') : old('nom', $excursio->nom) }}" maxlength="20" required>
+                            <input type="text" class="form-control" id="nom" name="nom" placeholder="Escriu el nom de l'excursió" value="{{session()->has('nom') ? session()->get('nom') : old('nom', $excursio->nom) }}" maxlength="15" required>
                             <div class="invalid-feedback">
                               Cal afegir un nom vàlid.
                             </div>
