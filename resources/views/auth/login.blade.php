@@ -28,12 +28,6 @@
                 <x-input id="user_name" class="block mt-1 w-full" type="text" name="user_name" :value="old('user_name')" required autofocus />
             </div>
 
-            <!-- Email Address --> 
-            {{-- <div>
-                <x-label for="email" :value="__('email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            </div> --}}
 
             <!-- Password -->
             <div class="mt-4">

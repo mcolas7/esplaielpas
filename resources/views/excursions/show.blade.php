@@ -10,10 +10,9 @@
 <div class="container w-100 mt-5">
     <div class="container w-100" style="margin-top: 120px">
         <div class="container" style="text-align: end;">
-            @auth {{-- Perque es mostri el link de crear un nou projecte nomes si l'usuari esta autenificat --}}
+            @auth 
               @can('monitor', App\Models\Persona::class)
                 <a class="btn btn-primary" href="{{ route('excursions.edit', $excursio) }}" id="editarExcursio">EDITAR</a> 
-                {{-- <a class="btn btn-danger" href="{{ route('excursions.destroy', $excursio) }}">ELIMINAR</a>  --}}
                 <form action="{{route('excursions.destroy', $excursio)}}" method="POST" class="d-inline formulariEliminar">
                   @csrf
                   @method('DELETE')

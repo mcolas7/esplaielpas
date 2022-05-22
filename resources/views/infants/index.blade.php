@@ -30,20 +30,13 @@
             </form>
           </div>
           <div class="col-md-6" style="text-align: end;">
-            @auth {{-- Perque es mostri el link de crear un nou projecte nomes si l'usuari esta autenificat --}}
+            @auth 
               <a class="btn btn-primary" href="{{ route('infants.create') }}" id="inscriureInfant">INSCRIURE INFANT</a> 
             @endauth
           </div>
         </div>
       </div>
        
-
-      {{-- @if (session()->has('status'))
-        <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
-          <strong>Perfecte!</strong> {{ session()->get('status')}}
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-      @endif --}}
 
       <div class="container">
         @forelse ($grups as $grup)
@@ -95,7 +88,6 @@
                         @method('DELETE')
                         <button style="border: none;"><i class="bi bi-trash" style="color: #6730b0;"></i></button>
                       </form>
-                      {{-- <a class="delete" title="Delete" data-toggle="tooltip"></a> --}}
                     </td>
                   @endif
                   
@@ -134,7 +126,6 @@
                         @method('DELETE')
                         <button style="border: none;"><i class="bi bi-trash" style="color: #6730b0;"></i></button>
                       </form>
-                      {{-- <a class="delete" title="Delete" data-toggle="tooltip"><i class="bi bi-trash" style="color: #6730b0;"></i></a> --}}
                     </td>
                   </tr>
                 @empty
@@ -164,24 +155,7 @@
       </div>
       
     </div>
-    {{-- @include('partials.session-status')  Per mostrar un missatge conforme s'ha eliminat el projecte, utilizant variables de sessio --}}
-    
-  {{-- <ul>
-    @forelse ($espurnes as $espurna)
-        <li><small>{{ $espurna->infant_id }}</small><br> <small> {{ $espurna->persona_id }}</small> <br> {{ $espurna->grup_id }}</li> {{-- Tambe hi ha el metode diffForHumans()
-    @empty
-        <li>No hay proyectos para mostrar</li>
-    @endforelse --}}
-
-    {{-- {{ $projects->links() }}  Per mostrar els botons de paginacio 
-   
-      </ul> --}}
-
   </div>
-  
-  
-
-
 </div>
 @endsection
 @section('js')

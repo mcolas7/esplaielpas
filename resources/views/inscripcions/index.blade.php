@@ -47,14 +47,6 @@
               </div>  
             </form>
           </div>
-       
-
-      {{-- @if (session()->has('status'))
-        <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
-          <strong>Perfecte!</strong> {{ session()->get('status')}}
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-      @endif --}}
 
       <div class="container">
         @forelse ($grups as $grup)
@@ -127,16 +119,8 @@
                 @empty
                     <td colspan="7">No hi ha inscripcions a l'excursió en aquest grup!</td>
                 @endforelse
-                        {{-- @else --}}
-                        {{-- @if ($loop->iteration == count($inscripcions)) --}}
-                        {{-- <td colspan="7">No hi ha inscripcions a l'excursió en aquest grup!</td> --}}
-                        {{-- @endif --}}
-                    {{-- @endif --}}
                     </tr>    
-                
-
               @endif
-              
             </tbody>
           </table>
         </div>

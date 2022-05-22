@@ -20,7 +20,6 @@
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="{{ route('home') }}">Inici</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="{{ route('nosaltres') }}">Nosaltres</a></li>
-              {{-- <li><i class="bx bx-chevron-right"></i> <a href="blog.html">Blog</a></li> --}}
               @auth
                 <li><i class="bx bx-chevron-right"></i> <a href="{{ route('excursions.index') }}">Excursions</a></li>
               @endauth

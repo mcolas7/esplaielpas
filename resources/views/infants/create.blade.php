@@ -16,13 +16,6 @@
                 <h2 class="title">Inscriure un infant</h2>
             </div>
             <div class="card-body">
-
-              {{-- @if (session()->has('message'))
-              <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <strong>Error!</strong> {{ session()->get('message')}}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>
-              @endif --}}
               
               @if ($errors->any())
                 @foreach ($errors->all() as $error)
@@ -194,20 +187,8 @@
                         </div>
                         <div class="valid-feedback">Vàlid!</div>
                       </div>
-                      
             
                       <hr class="my-4">
-                    
-                     
-            
-
-                      {{-- @if ($errors->any())
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                              <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                      @endif --}}
             
                       <button class="w-100 btn btn-primary btn-lg" type="submit" id="submit">INSCRIURE INFANT</button>
                     </div>

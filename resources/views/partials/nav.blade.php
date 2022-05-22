@@ -50,13 +50,11 @@
               </div>
                 
             @endguest
-           <!-- btn btn-outline-warning me-2 -->
-          <!-- <button type="button" class="btn btn-warning ">Registrar-se</button> -->
         </div>
       
     </nav>
 
 </header><!-- End Header -->
-<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none"> {{-- MOLT IMPORTANT QUE ELS LOG OUT SIGUI UTILIZANT EL METODE POST I NO GET --}}
+<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
     @csrf
 </form>
