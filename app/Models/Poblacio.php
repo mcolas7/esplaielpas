@@ -12,6 +12,11 @@ class Poblacio extends Model
     protected $table = 'poblacions';
     protected $primaryKey = 'poblacio_id';
 
+    /**
+     * This model has many Personas, and the foreign key is poblacio_id.
+     * 
+     * @return A collection of Persones.
+     */
     public function persones () {
         return $this->hasMany(Persona::class, 'poblacio_id');
     }

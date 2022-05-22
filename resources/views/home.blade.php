@@ -16,7 +16,9 @@
         <div class="col-xl-6">
           <h1 id="titol">Esplai el Pas</h1>
           <h2>La nostra casa és el món, el nostre sostre les estrelles!</h2>
-          <a href="{{ route('login') }}" class="btn-get-started scrollto">Iniciar Sessió</a>
+          @guest
+            <a href="{{ route('login') }}" class="btn-get-started scrollto">Iniciar Sessió</a>
+          @endguest
         </div>
       </div>
     </div>
@@ -38,7 +40,6 @@
     <!-- ======= About Section ======= -->
     <section id="about" class="about section-bg">
       <div class="container" data-aos="fade-up">
-
         <div class="row no-gutters">
           <div class=" col-xl-5 d-flex align-items-stretch">
             <div class="content">
@@ -47,7 +48,7 @@
                 És una associació voluntària sense ànim de lucre que treballa per a l'educació en el lleure d'infants i joves. Està considerada una opció d'educació no formal. Entre les diferents activitats que es poden fer en un esplai, en destaquen les següents:el joc, com a element clau en el desenvolupament personal i interpersonal; el taller; l'excursió, com a descoberta de l'entorn i el medi natural; l'esport; la convivència; la implicació personal; la participació i la presa de responsabilitats en el desenvolupament de l'activitat.
               </p>
               <p class="justify">Els centres d'esplai treballen amb la intenció de ser un servei per a la comunitat més propera, amb el consentiment dels pares i mares, i amb l'objectiu de formar infants i joves per aconseguir que creixin com a persones des d'una perspectiva integral que té en compte el compromís social amb l'entorn.</p>
-              <a href="vista/nosaltresView.html" class="about-btn"><span>Nosaltres</span> <i class="bx bx-chevron-right"></i></a>
+              <a href="{{ route('nosaltres') }}" class="about-btn"><span>Nosaltres</span> <i class="bx bx-chevron-right"></i></a>
             </div>
           </div>
           <div class="col-xl-7 d-flex align-content-center mt-5 pt-5">
@@ -366,5 +367,14 @@
 @section('js')
 
   <script src="{{asset('/js/main.js')}}"></script>
-  
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  @if (session()->has('status'))
+  <script>
+    Swal.fire(
+      "Perfecte!",
+      "{{ session()->get('status')}}",
+      "success")
+    </script>
+  @endif
 @endsection

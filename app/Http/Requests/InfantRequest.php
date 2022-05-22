@@ -13,7 +13,7 @@ class InfantRequest extends FormRequest
      */
     public function authorize()
     {
-        return true; //$this->user()->isAdmin()
+        return true;
     }
 
     /**
@@ -23,20 +23,6 @@ class InfantRequest extends FormRequest
      */
     public function rules()
     {
-
-        // switch ($this->method()) {
-        //     case "POST": {
-        //         return [
-        //             "name" => "required|min:2|max:100|unique:cities",
-        //         ];
-        //     }
-        //     case "PUT": {
-        //         return [
-        //             "name" => "required|min:2|max:100|unique:cities,name," . $this->route('city'),
-        //         ];
-        //     }
-        // }
-        // return [];
 
         return [
             'nom' => 'required',
@@ -56,6 +42,10 @@ class InfantRequest extends FormRequest
         ];
     }
 
+    /**
+     * The messages() function returns an array of custom error messages that will be used by the
+     * validator
+     */
     public function messages()
     {
         return [

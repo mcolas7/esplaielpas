@@ -12,7 +12,14 @@
   <div class="container mt-5 w-100">
 
     <div class="container" style="margin-top: 100px;">
-      <h1 class="mt-4" id="buscador" style="color: #6730b0;">Buscador:</h1>
+      @can('monitor', App\Models\Persona::class)
+        <div class="d-flex justify-content-end">
+          <div class="mt-2">
+            <a class="btn btn-primary" href="{{ route('excursions.create') }}" id="crearExcursio">CREAR EXCURSIÓ</a> 
+          </div>
+        </div>
+      @endcan  
+      <h1 class="mt-2" id="buscador" style="color: #6730b0;">Buscador:</h1>
       <form method="GET" action="{{ route('excursions.index') }}">
         <div class="row mt-3 mb-2">
           <div class="col-md-4 themed-grid-col">
@@ -110,6 +117,15 @@
   Swal.fire(
     "Perfecte!",
     "{{ session()->get('status')}}",
+    "success")
+  </script>
+@endif
+
+@if (session()->has('inscripcio'))
+<script>
+  Swal.fire(
+    "Perfecte!",
+    "{{ session()->get('inscripcio')}}",
     "success")
   </script>
 @endif

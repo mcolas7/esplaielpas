@@ -15,17 +15,40 @@
           {{-- <li class="nav-item"><a href="{{ route('blog') }}" class="nav-link {{ request()->routeIs('blog') ? 'active' : ''}}">BLOG</a></li> --}}
           @auth
             <li class="nav-item"><a href="{{ route('excursions.index') }}" class="nav-link {{ request()->routeIs('excursions.index') ? 'active' : ''}}">EXCURSIONS</a></li>
-            <li class="nav-item"><a href="{{ route('infants.index') }}" class="nav-link {{ request()->routeIs('infants.index') ? 'active' : ''}}">INFANTS</a></li>
+            @can('monitor', App\Models\Persona::class)
+              <li class="nav-item"><a href="{{ route('infants.index') }}" class="nav-link {{ request()->routeIs('infants.index') ? 'active' : ''}}">INFANTS</a></li>
+            @endcan
+            
           @endauth
         </ul>
       </div>
         <div class="col-md-3 text-end pe-4 align-content-end p-2">
+            
             @guest
-            <a href="{{ route('login') }}"><button type="button" class="boto-inici">INICIAR SESSIÓ</button></a>
+              <a href="{{ route('login') }}"><button type="button" class="boto-inici">INICIAR SESSIÓ</button></a>
             @else
-                <button type="button" class="boto-inici" href="#" onclick="event.preventDefault();
+              <div class="d-flex justify-content-end">
+                <div class="dropdown text-end me-3 mt-2" >
+                  <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                      <path style="color: #6730b0;" d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                      <path style="color: #6730b0;" fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                    </svg>
+                  </a>
+                  <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+                    <li><a class="dropdown-item" href="{{ route('tutors.show', auth()->user()->persona) }}">Perfil</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="{{ route('tutors.change') }}">Canviar contrasenya</a></li>
+                  </ul>
+                </div>
+
+                <div>
+                  <button type="button" class="boto-inici" href="#" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();"
-                >TANCAR SESSIÓ</button>
+                    >TANCAR SESSIÓ</button>
+                </div>
+              </div>
+                
             @endguest
            <!-- btn btn-outline-warning me-2 -->
           <!-- <button type="button" class="btn btn-warning ">Registrar-se</button> -->

@@ -55,8 +55,8 @@
               <tr>
                 <th scope="col" class="col-sm-1">NOM</th>
                 <th scope="col" class="col-sm-2">COGNOMS</th>
-                <th scope="col" class="col-sm-3">TUTORS</th>
-                <th scope="col" class="col-sm-2">TELÈFON</th>
+                <th scope="col" class="col-sm-4">TUTORS</th>
+                <th scope="col" class="col-sm-1">TELÈFON</th>
                 <th scope="col" class="col-sm-3">AL·LÈRGIA</th>
                 <th scope="col" class="col-sm-1" style="text-align: center;">ACCIONS</th>
               </tr>
@@ -67,12 +67,16 @@
                 @forelse ($infants as $infant)
 
                   @if ($infant->infant->grup_id == $grup->grup_id)
-
+                    <tr>
                     <td>{{$infant['nom']}}</td>
                     <td>{{$infant['cognoms']}}</td>
                     <td>
                       @forelse ($infant->infant->tutors as $tutor)
-                        <a href="{{ route('tutors.show', $tutor->persona) }}" style="color: #6730b0;">{{$tutor->persona->nom . " " . $tutor->persona->cognoms}}</a>
+                        @if ($loop->iteration == count($infant->infant->tutors))
+                          <a href="{{ route('tutors.show', $tutor->persona) }}" style="color: #6730b0;">{{$tutor->persona->nom . " " . $tutor->persona->cognoms}}</a>
+                        @else
+                          <a href="{{ route('tutors.show', $tutor->persona) }}" style="color: #6730b0;">{{$tutor->persona->nom . " " . $tutor->persona->cognoms ." - "}}</a>
+                        @endif
                       @empty
                         <a href="{{ route('tutors.create', $infant)}}" style="color: #6730b0;"><i class="bi bi-person-plus"></i> Afegir Tutor</a>
                       @endforelse
@@ -98,7 +102,7 @@
                 @empty
                   <td colspan="7">No hi han resultats!</td>
                 @endforelse
-
+              </tr>
               @else
 
                 @forelse ($grup->infants as $infant)
@@ -107,7 +111,11 @@
                     <td>{{$infant->persona->cognoms}}</td>
                     <td>
                       @forelse ($infant->tutors as $tutor)
-                        <a href="{{ route('tutors.show', $tutor->persona) }}" style="color: #6730b0;">{{$tutor->persona->nom . " " . $tutor->persona->cognoms}}</a>
+                        @if ($loop->iteration == count($infant->tutors))
+                          <a href="{{ route('tutors.show', $tutor->persona) }}" style="color: #6730b0;">{{$tutor->persona->nom . " " . $tutor->persona->cognoms}}</a>
+                        @else
+                          <a href="{{ route('tutors.show', $tutor->persona) }}" style="color: #6730b0;">{{$tutor->persona->nom . " " . $tutor->persona->cognoms ." - "}}</a>
+                        @endif
                       @empty
                         <a href="{{ route('tutors.create', $infant->persona)}}" style="color: #6730b0;"><i class="bi bi-person-plus"></i> Afegir Tutor</a>
                       @endforelse
@@ -116,8 +124,6 @@
                       }
                       @endif
                     </td>
-                    
-
                     <td>{{$infant->persona->telefon}}</td>
                     <td>{{$infant->infantSalut['alergies'] == 1 ? $infant->infantSalut->alergia :'No'}}</td>
                     <td style="text-align: center;">

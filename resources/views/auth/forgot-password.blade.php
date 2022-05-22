@@ -1,13 +1,13 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+            <a href="{{route('home')}}">
+                <img class="mt-5 mb-0 pb-0" src="{{asset('/img/fliki2.png')}}"">
             </a>
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600">
-            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+            {{ __("Has oblidat no contrasenya? Cap problema. Només has d'escriure el teu correu electrònic i t'enviarem un enllaç per restablir la teva contrasenya.") }}
         </div>
 
         <!-- Session Status -->
@@ -27,8 +27,8 @@
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <x-button>
-                    {{ __('Email Password Reset Link') }}
+                <x-button style="background: #6730b0">
+                    {{ __('Restablir contrasenya') }}
                 </x-button>
             </div>
         </form>

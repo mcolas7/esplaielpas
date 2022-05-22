@@ -95,6 +95,18 @@ body {
 
 .boto:hover {
   background: #3c235e;
+  border: 2px solid #3c235e;
+}
+
+#crearExcursio {
+  background: #ffd81f;
+  color: black;
+  border: 2px solid #ffd81f;
+}
+
+#crearExcursio:hover {
+  background: #d9a509;
+  border: 2px solid #d9a509;
 }
 
 /* --------------------------------------------------------------

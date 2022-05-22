@@ -130,7 +130,7 @@
 
                         <hr class="my-4">
             
-                        <button class="w-100 btn btn-primary btn-lg" type="submit" id="submit">EDITAR TUTOR</button>
+                        <button class="w-100 btn btn-primary btn-lg" type="submit" id="submit">EDITAR</button>
                         
                       </div>       
                     </div>

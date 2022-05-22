@@ -13,6 +13,12 @@ class Monitor extends Model
     protected $fillable = ['persona_id','grup_id'];
     protected $guarded = ['monitor_id'];
 
+    /**
+     * This function returns the relationship between the current model and the model specified in the
+     * first parameter.
+     * 
+     * @return The relationship between the two models.
+     */
     public function persona() {
         return $this->belongsTo(Persona::class,'persona_id');
     }

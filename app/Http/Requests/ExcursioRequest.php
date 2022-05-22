@@ -13,7 +13,7 @@ class ExcursioRequest extends FormRequest
      */
     public function authorize()
     {
-        return true; //$this->user()->isAdmin()
+        return true; 
     }
 
     /**
@@ -25,7 +25,6 @@ class ExcursioRequest extends FormRequest
     {
         return [
             'nom' => 'required|max:20',
-            //'checkbox' => 'accepted',
             'tipo_excursio_id' => 'required',
             'localitzacio' => 'required|max:50',
             'preu' => 'required|numeric|between:1,300', 
@@ -37,10 +36,14 @@ class ExcursioRequest extends FormRequest
             'long' => 'nullable',
             'imatge' => 'required|image', //size:3000
             'autoritzacio' => 'required|file', //size:1000
-            'descripcio' => 'required|max:2000' //min:5|max:5|digits:5
+            'descripcio' => 'required|max:2000'
         ];
     }
 
+    /**
+     * The messages() function returns an array of custom error messages that will be used by the
+     * validator
+     */
     public function messages()
     {
         return [

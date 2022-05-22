@@ -25,13 +25,16 @@
                   <div class="col-6" style="text-align: start">
                     <a class="w-50 btn btn-primary btn-lg" href="{{ route('tutors.edit', $persona)}}" id="botoEditar">EDITAR</a>
                   </div>
-                  <div class="col-6" style="text-align: end">
-                    <form action="{{route('tutors.destroy', $persona)}}" method="POST" class="d-inline formulariEliminar">
-                      @csrf
-                      @method('DELETE')
-                      <button class="btn btn-danger btn-lg w-50 border-2">ELIMINAR</button>
-                    </form>
-                  </div>
+                  @can('monitor', App\Models\Persona::class)
+                    <div class="col-6" style="text-align: end">
+                      <form action="{{route('tutors.destroy', $persona)}}" method="POST" class="d-inline formulariEliminar">
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn btn-danger btn-lg w-50 border-2">ELIMINAR</button>
+                      </form>
+                    </div>
+                  @endcan
+                  
                 </div>
 
 
@@ -87,9 +90,12 @@
                     </div>
                   </div>
 
+                    
+                    @can('monitor', App\Models\Persona::class)
                     <hr class="my-4">
-            
-                    <a class="w-100 btn btn-primary btn-lg" href="{{ route('infants.index')}}" id="botoBack">TORNAR LLISTAT INFANTS</a>
+                      <a class="w-100 btn btn-primary btn-lg" href="{{ route('infants.index')}}" id="botoBack">TORNAR LLISTAT INFANTS</a>
+                    @endcan
+                    
                         
                     </div>      
                   </div>

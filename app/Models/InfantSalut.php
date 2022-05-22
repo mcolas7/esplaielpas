@@ -13,6 +13,11 @@ class InfantSalut extends Model
     protected $fillable = ['infant_id', 'alergies', 'alergia'];
     protected $guarded = ['infant_salut_id'];
 
+    /**
+     * This function returns the infant that belongs to the infant_id of the current object.
+     * 
+     * @return The infant_id from the infant table.
+     */
     public function infant() {
         return $this->belongsTo(Infant::class,'infant_id');
     }

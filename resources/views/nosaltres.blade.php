@@ -162,7 +162,7 @@
                 <h3>Elisenda de la Iglesia</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                  Bonees! sóc l’Elisenda, desprenc energia tot el dia i m’encanta congelar moments viscuts en fotos i vídeos. No hi ha res que em posi més feliç que un bon atac de riure amb la gent que estimo
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -186,7 +186,7 @@
                 <h3>Nil Bayarri</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                  M'encanta estar envoltat de natura. A més, les meves activitats preferides són l'escalada i el trapezi. El que més m'agrada dels caps de setmana és anar a l'Esplai: un món millor és possible!
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -253,7 +253,7 @@
                 <h3>Júlia Soler</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                  Des de petita m'ha agradat conèixer tot allò que m'envolta. L'Esplai em va ensenyar valors i em va fer viure experiències que mai oblidaré. Ara retorno tot això com a monitora. Ens veiem el dissabte!
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -375,7 +375,7 @@
                 <h3>Laia Roura</h3>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                  Soc una noia d'estiu i em fa feliç tot el que està relacionat amb aquesta estació. Sento l'esplai com un lloc on em puc sentir jo mateixa al 100%
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>

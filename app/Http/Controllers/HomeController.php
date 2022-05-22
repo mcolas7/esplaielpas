@@ -7,8 +7,14 @@ use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
+    /**
+     * The function validates the form data, sends an email and returns a message to the user.
+     * 
+     * @return The message is being returned to the user.
+     */
     public function store () {
 
+        // Valido les dades del formulari de contacte
         $message = request()->validate([
             'name' => 'required',
             'email' => 'required|email',
@@ -21,10 +27,10 @@ class HomeController extends Controller
             'message.required' => 'El camp missatge és obligatori.'
         ]);
 
-        // dd($message);
-
+        // Envio un correu a l'esplai el pas amb les dades introduides per el convidat
         Mail::to('esplaielpas@gmail.com')->queue(new ContactMail($message)); 
 
+        // Retorno al convidat a l'inici i li mostro un missatge utilizant variables de sessió
         return back()->with('status', 'Hem rebut el teu missatge, respondrem al més aviat possible.');
     }
 }

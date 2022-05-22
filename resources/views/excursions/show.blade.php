@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'Excursions')
+@section('title', 'Excursio')
 
 @section('css')
     <link href="{{asset('/css/excursions/excursioShow.css')}}" rel="stylesheet">
@@ -11,13 +11,15 @@
     <div class="container w-100" style="margin-top: 120px">
         <div class="container" style="text-align: end;">
             @auth {{-- Perque es mostri el link de crear un nou projecte nomes si l'usuari esta autenificat --}}
-              <a class="btn btn-primary" href="{{ route('excursions.edit', $excursio) }}" id="editarExcursio">EDITAR</a> 
-              {{-- <a class="btn btn-danger" href="{{ route('excursions.destroy', $excursio) }}">ELIMINAR</a>  --}}
-              <form action="{{route('excursions.destroy', $excursio)}}" method="POST" class="d-inline formulariEliminar">
-                @csrf
-                @method('DELETE')
-                <button class="btn btn-danger border-2">ELIMINAR</button>
-              </form>
+              @can('monitor', App\Models\Persona::class)
+                <a class="btn btn-primary" href="{{ route('excursions.edit', $excursio) }}" id="editarExcursio">EDITAR</a> 
+                {{-- <a class="btn btn-danger" href="{{ route('excursions.destroy', $excursio) }}">ELIMINAR</a>  --}}
+                <form action="{{route('excursions.destroy', $excursio)}}" method="POST" class="d-inline formulariEliminar">
+                  @csrf
+                  @method('DELETE')
+                  <button class="btn btn-danger border-2">ELIMINAR</button>
+                </form>
+              @endcan
             @endauth
         </div>
         <div class="row mb-3">
@@ -56,9 +58,19 @@
                   <p style="text-align: justify;">{{$excursio->descripcio}}</p>
               </div>
               <div class="row">
-                <div class="col-md-6 themed-grid-col border"><a class="btn btn-primary" id="botoAutoritzacio" href="/storage/{{$excursio->autoritzacio}}" target="_blank">AUTORITZAZCIÓ</a></div>
+                <div class="col-md-6 themed-grid-col">
+                  <a class="btn btn-primary" id="botoAutoritzacio" href="/storage/{{$excursio->autoritzacio}}" target="_blank">AUTORITZAZCIÓ</a>
+                </div>
                 @auth
-                    <div class="col-md-6 themed-grid-col border">.col-md-6</div>
+                  <div class="col-md-6 themed-grid-col" style="text-align: end;">
+                    @can('inscriure', auth()->user()->persona)
+                      <a class="btn btn-primary" id="botoAutoritzacio" href="{{ route('inscripcions.create', $excursio)}}">INSCRIURE INFANT</a>
+                    @endcan
+                    @can('monitor', auth()->user()->persona)
+                      <a class="btn btn-primary" id="botoAutoritzacio" href="{{ route('inscripcions.index', $excursio)}}">LLISTAT INFANTS</a>
+                    @endcan
+                  </div>
+                    
                 @endauth
                 
               </div>
@@ -92,4 +104,5 @@
     }
   })
   });
+</script>  
 @endsection

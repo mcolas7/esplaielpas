@@ -21,16 +21,9 @@ class User extends Authenticatable
         'user_name',
         'password',
         'persona_id',
-        'data_validacio_pwd'
+        'data_validacio_pwd',
+        'rol_id'
     ];
-
-    // protected $fillable = [
-    //     'user_id',
-    //     'persona_id',
-    //     'password',
-    //     'user_name',
-    //     'data_validacio_pwd'
-    // ];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -52,7 +45,22 @@ class User extends Authenticatable
     ];
 
 
+    /**
+     * This function returns the relationship between the model and the Persona model, which is a
+     * one-to-one relationship.
+     * 
+     * @return The relationship between the two models.
+     */
     public function persona() {
         return $this->belongsTo(Persona::class,'persona_id');
+    }
+
+    /**
+     * This function returns the relationship between the user and the role.
+     * 
+     * @return The relationship between the user and the rol.
+     */
+    public function rol() {
+        return $this->belongsTo(Rol::class, 'rol_id');
     }
 }

@@ -13,7 +13,7 @@ class ExcursioEditRequest extends FormRequest
      */
     public function authorize()
     {
-        return true; //$this->user()->isAdmin()
+        return true; 
     }
 
     /**
@@ -36,7 +36,7 @@ class ExcursioEditRequest extends FormRequest
             'long' => 'nullable',
             'imatge' => 'nullable|image',
             'autoritzacio' => 'nullable|file',
-            'descripcio' => 'required|max:2000' //min:5|max:5|digits:5
+            'descripcio' => 'required|max:2000'
         ];
     }
 }
